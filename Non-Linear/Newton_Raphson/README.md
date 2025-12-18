@@ -24,9 +24,9 @@ Where:
 Draw a tangent line to f(x) at point x(n). The point where this tangent crosses the x-axis gives us the next approximation x(n+1).
 
 **Algorithm Steps:**
-1. Start with an initial guess x₀ close to the root
-2. Calculate f(x₀) and f'(x₀)
-3. Compute x₁ = x₀ - f(x₀)/f'(x₀)
+1. Start with an initial guess x0 close to the root
+2. Calculate f(x0) and f'(x0)
+3. Compute x1 = x0 - f(x0)/f'(x0)
 4. Repeat until |x(n+1) - x(n)| < tolerance
 
 **Advantages:**
@@ -82,40 +82,38 @@ void newtonRaphson(double x0, double tolerance, int maxIter) {
         
         x1 = x0 - fx / dfx;
         
-
-        cout << i << \"\\t\" << x0 << \"\\t\" << fx << \"\\t\" 
-             << dfx << \"\\t\" << x1 << endl;
+        cout << i << "\t" << x0 << "\t" << fx << "\t" 
+             << dfx << "\t" << x1 << endl;
         
         
         if (fabs(x1 - x0) < tolerance) {
-            cout << \"\\nConvergence achieved!\" << endl;
+            cout << "\nConvergence achieved!" << endl;
             x0 = x1;
             break;
         }
         
         
         if (fabs(fx) < tolerance) {
-            cout << \"\\nRoot found (f(x) ≈ 0)!\" << endl;
+            cout << "\nRoot found (f(x) ~ 0)!" << endl;
             break;
         }
         
         x0 = x1;  
     }
     
-    cout << \"\\nRoot found at x = \" << x0 << endl;
-    cout << \"Function value at root: f(\" << x0 << \") = \" << f(x0) << endl;
+    cout << "\nRoot found at x = " << x0 << endl;
+    cout << "Function value at root: f(" << x0 << ") = " << f(x0) << endl;
 }
 
 int main() {
     double x0, tolerance;
     int maxIter;
     
-
-    cout << \"\\nEnter initial guess (x0): \";
+    cout << "\nEnter initial guess (x0): ";
     cin >> x0;
-    cout << \"Enter tolerance (e.g., 0.0001): \";
+    cout << "Enter tolerance (e.g., 0.0001): ";
     cin >> tolerance;
-    cout << \"Enter maximum iterations: \";
+    cout << "Enter maximum iterations: ";
     cin >> maxIter;
     
     newtonRaphson(x0, tolerance, maxIter);
@@ -133,7 +131,7 @@ int main() {
 ```
 
 **Input Format:**
-- Line 1: Initial guess (x₀)
+- Line 1: Initial guess (x0)
 - Line 2: Tolerance (desired accuracy)
 - Line 3: Maximum number of iterations
 

@@ -12,8 +12,12 @@
 
 ## Linear Regression Input
 
+```
 [Add your input format here]
+```
 
 ## Linear Regression Output
 
+```
 [Add your output format here]
+```

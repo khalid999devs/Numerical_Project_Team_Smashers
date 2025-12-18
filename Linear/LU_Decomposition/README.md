@@ -12,8 +12,12 @@
 
 ## LU Decomposition Input
 
+```
 [Add your input format here]
+```
 
 ## LU Decomposition Output
 
+```
 [Add your output format here]
+```

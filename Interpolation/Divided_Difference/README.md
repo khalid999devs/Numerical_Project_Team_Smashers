@@ -12,8 +12,12 @@
 
 ## Divided Difference Input
 
+```
 [Add your input format here]
+```
 
 ## Divided Difference Output
 
+```
 [Add your output format here]
+```

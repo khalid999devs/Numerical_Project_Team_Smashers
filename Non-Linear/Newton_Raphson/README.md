@@ -12,8 +12,12 @@
 
 ## Newton Raphson Input
 
+```
 [Add your input format here]
+```
 
 ## Newton Raphson Output
 
+```
 [Add your output format here]
+```

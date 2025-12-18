@@ -12,8 +12,12 @@
 
 ## Gauss Jordan Input
 
+```
 [Add your input format here]
+```
 
 ## Gauss Jordan Output
 
+```
 [Add your output format here]
+```

@@ -12,8 +12,12 @@
 
 ## Simpson's 1/3 Rule Input
 
+```
 [Add your input format here]
+```
 
 ## Simpson's 1/3 Rule Output
 
+```
 [Add your output format here]
+```

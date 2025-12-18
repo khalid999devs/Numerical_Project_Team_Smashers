@@ -12,8 +12,12 @@
 
 ## Simpson's 3/8 Rule Input
 
+```
 [Add your input format here]
+```
 
 ## Simpson's 3/8 Rule Output
 
+```
 [Add your output format here]
+```

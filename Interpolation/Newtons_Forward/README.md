@@ -12,8 +12,12 @@
 
 ## Newton's Forward Interpolation Input
 
+```
 [Add your input format here]
+```
 
 ## Newton's Forward Interpolation Output
 
+```
 [Add your output format here]
+```

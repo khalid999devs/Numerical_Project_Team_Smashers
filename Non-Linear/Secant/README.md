@@ -12,8 +12,12 @@
 
 ## Secant Input
 
+```
 [Add your input format here]
+```
 
 ## Secant Output
 
+```
 [Add your output format here]
+```

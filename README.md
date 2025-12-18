@@ -28,7 +28,6 @@
     - [Input](Linear/Matrix_Inversion/README.md#matrix-inversion-input)
     - [Output](Linear/Matrix_Inversion/README.md#matrix-inversion-output)
 
----
 
 ## [Solution of Non-Linear Equations](Non-Linear/README.md)
 
@@ -56,7 +55,6 @@
     - [Input](Non-Linear/Newton_Raphson/README.md#newton-raphson-input)
     - [Output](Non-Linear/Newton_Raphson/README.md#newton-raphson-output)
 
----
 
 ## [Interpolation & Approximation](Interpolation/README.md)
 
@@ -78,7 +76,6 @@
     - [Input](Interpolation/Divided_Difference/README.md#divided-difference-input)
     - [Output](Interpolation/Divided_Difference/README.md#divided-difference-output)
 
----
 
 ## [Curve Fitting/Regression](Regression/README.md)
 
@@ -100,7 +97,6 @@
     - [Input](Regression/Transcendental_Regression/README.md#transcendental-regression-input)
     - [Output](Regression/Transcendental_Regression/README.md#transcendental-regression-output)
 
----
 
 ## [Numerical Integration](Numerical_Integration/README.md)
 
@@ -116,7 +112,6 @@
     - [Input](Numerical_Integration/Simpsons_3_8/README.md#simpsons-38-rule-input)
     - [Output](Numerical_Integration/Simpsons_3_8/README.md#simpsons-38-rule-output)
 
----
 
 ## [Numerical Differentiation](Numerical_Differentiation/README.md)
 
@@ -132,7 +127,6 @@
     - [Input](Numerical_Differentiation/Differentiation_Backward_Interpolation/README.md#differentiation-using-backward-interpolation-input)
     - [Output](Numerical_Differentiation/Differentiation_Backward_Interpolation/README.md#differentiation-using-backward-interpolation-output)
 
----
 
 ## [Solution of Ordinary Differential Equations](Differential_Equations/README.md)
 

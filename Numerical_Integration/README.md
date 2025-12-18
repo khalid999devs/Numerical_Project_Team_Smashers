@@ -3,6 +3,7 @@
 ## Table of Contents
 
 - **[Simpson's 1/3 Rule](Simpsons_1_3/README.md)**
+
   - [Theory](Simpsons_1_3/README.md#simpsons-13-rule-theory)
   - [Code](Simpsons_1_3/README.md#simpsons-13-rule-code)
   - [Input](Simpsons_1_3/README.md#simpsons-13-rule-input)

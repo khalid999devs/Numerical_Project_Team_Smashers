@@ -3,12 +3,14 @@
 ## Table of Contents
 
 - **[Linear Regression](Linear_Regression/README.md)**
+
   - [Theory](Linear_Regression/README.md#linear-regression-theory)
   - [Code](Linear_Regression/README.md#linear-regression-code)
   - [Input](Linear_Regression/README.md#linear-regression-input)
   - [Output](Linear_Regression/README.md#linear-regression-output)
 
 - **[Polynomial Regression](Polynomial_Regression/README.md)**
+
   - [Theory](Polynomial_Regression/README.md#polynomial-regression-theory)
   - [Code](Polynomial_Regression/README.md#polynomial-regression-code)
   - [Input](Polynomial_Regression/README.md#polynomial-regression-input)

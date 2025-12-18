@@ -1,4 +1,4 @@
-# Simpson's 3/8 Rule Method
+# Simpson's 3/8 Rule
 
 ## Simpson's 3/8 Rule Theory
 

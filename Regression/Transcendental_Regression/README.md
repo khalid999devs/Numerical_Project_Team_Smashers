@@ -1,4 +1,4 @@
-# Transcendental Regression Method
+# Transcendental Regression
 
 ## Transcendental Regression Theory
 

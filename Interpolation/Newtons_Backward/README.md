@@ -1,4 +1,4 @@
-# Newton's Backward Interpolation Method
+# Newton's Backward Interpolation
 
 ## Newton's Backward Interpolation Theory
 

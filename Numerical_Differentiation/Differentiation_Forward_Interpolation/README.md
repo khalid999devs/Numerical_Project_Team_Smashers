@@ -1,4 +1,4 @@
-# Differentiation Using Forward Interpolation Method
+# Differentiation Using Forward Interpolation
 
 ## Differentiation Using Forward Interpolation Theory
 

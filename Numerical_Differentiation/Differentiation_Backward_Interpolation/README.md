@@ -1,4 +1,4 @@
-# Differentiation Using Backward Interpolation Method
+# Differentiation Using Backward Interpolation
 
 ## Differentiation Using Backward Interpolation Theory
 

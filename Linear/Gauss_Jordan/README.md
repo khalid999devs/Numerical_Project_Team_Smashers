@@ -1,4 +1,4 @@
-# Gauss Jordan Method
+# Gauss Jordan Elimination Method
 
 ## Gauss Jordan Theory
 

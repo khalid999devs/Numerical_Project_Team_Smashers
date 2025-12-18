@@ -1,4 +1,4 @@
-# Newton's Forward Interpolation Method
+# Newton's Forward Interpolation
 
 ## Newton's Forward Interpolation Theory
 

@@ -1,4 +1,4 @@
-# Linear Regression Method
+# Linear Regression
 
 ## Linear Regression Theory
 

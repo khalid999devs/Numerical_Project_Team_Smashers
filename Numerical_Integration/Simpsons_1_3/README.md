@@ -1,4 +1,4 @@
-# Simpson's 1/3 Rule Method
+# Simpson's 1/3 Rule
 
 ## Simpson's 1/3 Rule Theory
 

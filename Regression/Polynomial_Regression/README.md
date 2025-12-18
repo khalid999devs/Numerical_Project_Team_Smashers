@@ -1,4 +1,4 @@
-# Polynomial Regression Method
+# Polynomial Regression
 
 ## Polynomial Regression Theory
 

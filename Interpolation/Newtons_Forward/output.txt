@@ -1,0 +1,93 @@
+Test case #1:
+Given points (x, y):
+  0  1
+  1  3
+  2  7
+  3  13
+Step size h = 1
+
+Forward Difference Table:
+ i           x[i]            y         Δ^1y         Δ^2y         Δ^3y
+ 0            0              1           2           2           0
+ 1            1              3           4           2
+ 2            2              7           6
+ 3            3             13
+
+Interpolated values:
+  P(0.5) = 1.75
+  P(2.5) = 9.75
+
+Test case #2:
+Given points (x, y):
+  1  1
+  2  8
+  3  27
+  4  64
+  5  125
+Step size h = 1
+
+Forward Difference Table:
+ i           x[i]            y          Δ^1y       Δ^2y         Δ^3y        Δ^4y
+ 0            1              1           7          12           6           0
+ 1            2              8          19          18           6
+ 2            3             27          37          24
+ 3            4             64          61
+ 4            5            125
+
+Interpolated values:
+  P(3.5) = 42.875
+
+Test case #3:
+Given points (x, y):
+  10  5
+  20  9
+  30  15
+  40  23
+Step size h = 10
+
+Forward Difference Table:
+ i          x[i]             y          Δ^1y        Δ^2y        Δ^3y
+ 0           10              5           4           2           0
+ 1           20              9           6           2
+ 2           30             15           8
+ 3           40             23
+
+Interpolated values:
+  P(15) = 6.75
+  P(35) = 18.75
+
+Test case #4:
+Given points (x, y):
+  2  4
+  4  16
+  6  36
+Step size h = 2
+
+Forward Difference Table:
+ i           x[i]            y         Δ^1y         Δ^2y
+ 0            2              4          12           8
+ 1            4             16          20
+ 2            6             36
+
+Interpolated values:
+  P(5) = 25
+
+Test case #5:
+Given points (x, y):
+  1  2
+  3  6
+  5  14
+  7  26
+Step size h = 2
+
+Forward Difference Table:
+ i           x[i]            y          Δ^1y        Δ^2y        Δ^3y
+ 0            1              2           4           4           0
+ 1            3              6           8           4
+ 2            5             14          12
+ 3            7             26
+
+Interpolated values:
+  P(4) = 9.5
+  P(6) = 19.5
+

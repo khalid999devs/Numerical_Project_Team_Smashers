@@ -1,0 +1,16 @@
+Enter the first point (a): 1.5
+Enter the second point (b): 2.0
+Enter tolerance (e.g., 0.0001): 0.0001
+Enter maximum iterations: 20
+
+1	1.500000	2.000000	1.622951	-0.117362
+2	1.622951	2.000000	1.640119	-0.030693
+3	1.640119	2.000000	1.644511	-0.008172
+4	1.644511	2.000000	1.645693	-0.002181
+5	1.645693	2.000000	1.646008	-0.000582
+6	1.646008	2.000000	1.646092	-0.000155
+
+Desired accuracy achieved!
+
+Root found at x = 1.646092
+Function value at root: f(1.646092) = -0.000155

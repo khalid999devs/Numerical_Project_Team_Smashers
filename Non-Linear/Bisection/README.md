@@ -5,11 +5,13 @@
 The Bisection Method is one of the simplest and most reliable methods for finding the root of a non-linear equation. It works by repeatedly dividing an interval in half and selecting the subinterval where the root exists.
 
 **Key Concepts:**
+
 - Based on the Intermediate Value Theorem
 - If f(x) is continuous on [a, b] and f(a) × f(b) < 0, then there exists at least one root in (a, b)
 - Also known as interval halving method or binary search method
 
 **Algorithm Steps:**
+
 1. Start with two points 'a' and 'b' such that f(a) and f(b) have opposite signs
 2. Calculate midpoint c = (a + b) / 2
 3. If f(c) = 0, then c is the root
@@ -18,11 +20,13 @@ The Bisection Method is one of the simplest and most reliable methods for findin
 6. Repeat until the interval becomes sufficiently small
 
 **Advantages:**
+
 - Always converges if initial assumptions are met
 - Simple to implement
 - No need for derivatives
 
 **Disadvantages:**
+
 - Slow convergence compared to other methods
 - Cannot detect multiple roots
 
@@ -43,19 +47,19 @@ void bisection(double a, double b, double tolerance) {
         cout << "Error: f(a) and f(b) must have opposite signs!" << endl;
         return;
     }
-    
+
     cout << fixed << setprecision(6);
-    
+
     double c;
     int iteration = 0;
-    
+
     while ((b - a) >= tolerance) {
         iteration++;
         c = (a + b) / 2.0;
-        
-        cout << iteration << "\t" << a << "\t" << b << "\t" 
+
+        cout << iteration << "\t" << a << "\t" << b << "\t"
              << c << "\t" << f(c) << endl;
-        
+
         if (f(c) == 0.0) {
             break;
         }
@@ -65,23 +69,23 @@ void bisection(double a, double b, double tolerance) {
             a = c;
         }
     }
-    
+
     cout << "\nRoot found at x = " << c << endl;
     cout << "Function value at root: f(" << c << ") = " << f(c) << endl;
 }
 
 int main() {
     double a, b, tolerance;
-    
+
     cout << "\nEnter the first point (a): ";
     cin >> a;
     cout << "Enter the second point (b): ";
     cin >> b;
     cout << "Enter tolerance (e.g., 0.0001): ";
     cin >> tolerance;
-    
+
     bisection(a, b, tolerance);
-    
+
     return 0;
 }
 ```
@@ -95,6 +99,7 @@ int main() {
 ```
 
 **Input Format:**
+
 - Line 1: First point 'a' of the interval
 - Line 2: Second point 'b' of the interval
 - Line 3: Tolerance (desired accuracy)

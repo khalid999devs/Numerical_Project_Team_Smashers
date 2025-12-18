@@ -1,8 +1,8 @@
-# Non-Linear Equations
+# Solution of Non-Linear Equations
 
 ## Table of Contents
 
-- **[Bisection Method](Bisection/README.md)**
+- **[Bi-section Method](Bisection/README.md)**
 
   - [Theory](Bisection/README.md#bisection-theory)
   - [Code](Bisection/README.md#bisection-code)

@@ -1,4 +1,4 @@
-# Newton Raphson Method
+# Newton-Raphson Method
 
 ## Newton Raphson Theory
 

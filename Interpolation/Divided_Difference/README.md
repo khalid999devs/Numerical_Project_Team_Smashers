@@ -1,4 +1,4 @@
-# Divided Difference Method
+# Newton's Divided Difference Method
 
 ## Divided Difference Theory
 

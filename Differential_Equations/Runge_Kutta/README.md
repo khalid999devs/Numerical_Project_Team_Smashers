@@ -1,4 +1,4 @@
-# Runge Kutta Method
+# Runge-Kutta Method
 
 ## Runge Kutta Theory
 

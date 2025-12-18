@@ -1,4 +1,4 @@
-# Bisection Method
+# Bi-section Method
 
 ## Bisection Theory
 

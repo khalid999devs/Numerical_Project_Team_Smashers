@@ -110,16 +110,15 @@ Value of x1 = 2
 Value of x2 = 3
 Value of x3 = -1
 Test Case 3:
-Value of x1 = 2
-Value of x2 = 3
-Value of x3 = 2
+Value of x1 = 1
+Value of x2 = 2
+Value of x3 = 3
 Test Case 4:
-Value of x1 = 0.844444
-Value of x2 = 2.17778
-Value of x3 = 3.88889
-Value of x4 = 3.08889
+Value of x1 = 1
+Value of x2 = 2
+Value of x3 = 3
+Value of x4 = 4
 Test Case 5:
-Value of x1 = 1.54545
-Value of x2 = 1.18182
-
+Value of x1 = 1
+Value of x2 = 1
 ```

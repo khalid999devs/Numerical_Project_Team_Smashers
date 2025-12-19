@@ -1,0 +1,19 @@
+Test Case 1:
+Value of x1 = 2
+Value of x2 = 3
+Test Case 2:
+Value of x1 = 2
+Value of x2 = 3
+Value of x3 = -1
+Test Case 3:
+Value of x1 = 1
+Value of x2 = 2
+Value of x3 = 3
+Test Case 4:
+Value of x1 = 1
+Value of x2 = 2
+Value of x3 = 3
+Value of x4 = 4
+Test Case 5:
+Value of x1 = 1
+Value of x2 = 1

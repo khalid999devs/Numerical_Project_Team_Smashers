@@ -60,8 +60,6 @@ Draw a tangent line to f(x) at point x(n). The point where this tangent crosses 
 #include <iomanip>
 using namespace std;
 
-
-
 double f(double x) {
     return x*x*x - x - 2;
 }
@@ -73,32 +71,27 @@ double df(double x) {
 void newtonRaphson(double x0, double tolerance, int maxIter) {
     cout << fixed << setprecision(6);
 
-
     double x1, fx, dfx;
 
     for (int i = 1; i <= maxIter; i++) {
         fx = f(x0);
         dfx = df(x0);
 
-
         if (fabs(dfx) < 1e-10) {
             cout << "\nError: Derivative is zero. Cannot continue." << endl;
             return;
         }
-
 
         x1 = x0 - fx / dfx;
 
         cout << i << "\t" << x0 << "\t" << fx << "\t"
              << dfx << "\t" << x1 << endl;
 
-
         if (fabs(x1 - x0) < tolerance) {
             cout << "\nConvergence achieved!" << endl;
             x0 = x1;
             break;
         }
-
 
         if (fabs(fx) < tolerance) {
             cout << "\nRoot found (f(x) ~ 0)!" << endl;

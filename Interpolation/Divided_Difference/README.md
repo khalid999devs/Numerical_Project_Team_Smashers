@@ -23,8 +23,8 @@ int main()
     int t;
     fin >> t;
 
-    for (int i = 1; i <= t; i++) {
-        fout << "Test case #" << i << ":\n";
+    for (int tc = 1; tc <= t; tc++) {
+        fout << "Test case #" << tc << ":\n";
 
         int n;
         fin >> n;
@@ -36,10 +36,8 @@ int main()
         vector<vector<double>> diff(n, vector<double>(n, 0));
         for (int i = 0; i < n; i++) diff[i][0] = y[i];
 
-        for (int j = 1; j < n; j++)
-        {
-            for (int i = 0; i < n - j; i++) 
-            {
+        for (int j = 1; j < n; j++) {
+            for (int i = 0; i < n - j; i++) {
                 diff[i][j] = (diff[i + 1][j - 1] - diff[i][j - 1]) / (x[i + j] - x[i]);
             }
         }
@@ -53,7 +51,7 @@ int main()
 
         fout << "\nDivided Difference Table:\n";
 
-        
+        // Header
         fout << setw(2) << "i" << "   " << setw(8) << "x[i]" << "   " << setw(8) << "f[xi]";
         for (int j = 1; j < n; j++) {
             fout << "   " << setw(12) << "f[x0";
@@ -62,7 +60,7 @@ int main()
         }
         fout << "\n";
 
-        
+        // Table values
         for (int i = 0; i < n; i++) {
             fout << setw(2) << i << "   ";
             fout << setw(8) << x[i] << "   ";
@@ -72,13 +70,12 @@ int main()
         }
 
         fout << "\nInterpolated values:\n";
-        for (int qi = 0; qi < q; qi++)
-        {
+        for (int qi = 0; qi < q; qi++) {
             double xq;
             fin >> xq;
 
             double result = diff[0][0];
-            for (int i = 1; i < n; i++) 
+            for (int i = 1; i < n; i++)
             {
                 double term = 1.0;
                 for (int j = 0; j < i; j++)

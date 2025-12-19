@@ -49,8 +49,6 @@ x(n+1) = x(n) - f(x(n)) × (x(n) - x(n-1)) / (f(x(n)) - f(x(n-1)))
 #include <iomanip>
 using namespace std;
 
-
-
 double f(double x) {
     return x*x*x - x - 2;
 }
@@ -58,31 +56,26 @@ double f(double x) {
 void secantMethod(double x0, double x1, double tolerance, int maxIter) {
     cout << fixed << setprecision(6);
 
-
     double x2, f0, f1;
 
     for (int i = 1; i <= maxIter; i++) {
         f0 = f(x0);
         f1 = f(x1);
 
-
         if (fabs(f1 - f0) < 1e-10) {
             cout << "\nError: Division by zero encountered!" << endl;
             return;
         }
-
 
         x2 = x1 - (f1 * (x1 - x0)) / (f1 - f0);
 
         cout << i << "\t" << x0 << "\t" << x1 << "\t"
              << x2 << "\t" << f(x2) << endl;
 
-
         if (fabs(x2 - x1) < tolerance) {
             cout << "\nConvergence achieved!" << endl;
             break;
         }
-
 
         x0 = x1;
         x1 = x2;

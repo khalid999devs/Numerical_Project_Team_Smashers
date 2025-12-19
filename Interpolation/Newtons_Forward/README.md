@@ -53,7 +53,7 @@ int main()
         for (int i = 0; i < n; i++) diff[i][0] = y[i];
 
         for (int j = 1; j < n; j++)
-            {
+        {
             for (int i = 0; i + j < n; i++)
             {
                 diff[i][j] = diff[i+1][j-1] - diff[i][j-1];
@@ -73,7 +73,8 @@ int main()
         for (int j = 1; j < n; j++) fout << "         Δ^" << j << "y";
         fout << "\n";
 
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i < n; i++)
+        {
             fout << setw(2) << i << "   ";
             fout << setw(10) << x[i] << "   ";
             for (int j = 0; j < n - i; j++)
@@ -83,7 +84,7 @@ int main()
 
         fout << "\nInterpolated values:\n";
 
-        for (int i=0; i<q;i++) 
+        for (int i=0; i<q;i++)
         {
             double xq;
             fin >> xq;
@@ -94,7 +95,7 @@ int main()
             double numer = 1.0;
             double denom_fact = 1.0;
 
-            for (int k = 1; k < n; k++) 
+            for (int k = 1; k < n; k++)
             {
                 numer *= (s - (k - 1));
                 denom_fact *= k;

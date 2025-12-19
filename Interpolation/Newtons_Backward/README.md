@@ -24,8 +24,8 @@ int main()
     int t;
     fin>>t;
 
-    for (int i =1;i<=t; i++)
-      {
+    for (int i=1;i<=t; i++)
+        {
         fout << "Test case #" << i << ":\n";
 
         int n;
@@ -61,7 +61,8 @@ int main()
         for (int j = 1; j < n; j++) fout << "         Δ^" << j << "y";
         fout << "\n";
 
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i < n; i++)
+        {
             fout << setw(2) << i << "   ";
             fout << setw(10) << x[i] << "   ";
             for (int j = 0; j <= i; j++)
@@ -184,7 +185,7 @@ Given points (x, y):
 Step size h = 10.000
 
 Backward Difference Table:
- i         x[i]            y          Δ^1y        Δ^2y        Δ^3y
+ i        x[i]             y          Δ^1y        Δ^2y        Δ^3y
  0       10.000          5.000
  1       20.000          9.000       4.000
  2       30.000         15.000       6.000       2.000

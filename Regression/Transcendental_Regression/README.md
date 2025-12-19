@@ -35,17 +35,59 @@ Transcendental regression is used when the relationship between variables follow
 ## Transcendental Regression Code
 
 ```cpp
-# Add your code here
+#include <bits/stdc++.h>
+using namespace std;
+
+int main(){
+    int n;
+    cin>>n;
+
+    vector<double>x(n),y(n);
+
+    for(int i=0;i<n;i++){
+        cin >> x[i] >> y[i];
+      }
+    double sumX=0,sumY=0,sumXY=0,sumX2=0;
+
+    for(int i=0;i<n;i++){
+        double X=x[i];        // X = x
+        double Y=log(y[i]);   // Y = ln(y)
+
+        sumX +=X;
+        sumY +=Y;
+        sumXY += X*Y;
+        sumX2 += X*X;
+    }
+
+    double b =(n*sumXY - sumX*sumY) / (n*sumX2 - sumX*sumX);
+    double A =(sumY - b*sumX)/n;
+
+    double a =exp(A);   // a = e^A
+
+    cout<<fixed<<setprecision(6);
+    cout<<"a= "<<a<<endl;
+    cout<<"b= "<<b<<endl;
+    cout<<"Model:y = "<<a<<"* e^("<<b<<"x)"<<endl;
+
+    return 0;
+}
 ```
 
 ## Transcendental Regression Input
 
 ```
-[Add your input format here]
+5
+1 2.7183
+2 7.3891
+3 20.0855
+4 54.5982
+5 148.4132
 ```
 
 ## Transcendental Regression Output
 
 ```
-[Add your output format here]
+a= 1.000008
+b= 0.999998
+Model:y = 1.000008* e^(0.999998x)
 ```

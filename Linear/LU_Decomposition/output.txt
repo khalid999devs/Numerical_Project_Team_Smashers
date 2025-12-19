@@ -1,0 +1,19 @@
+Test Case 1:
+Value of x1 = 0.5
+Value of x2 = 0
+Value of x3 = 0
+Test Case 2:
+Value of x1 = -4
+Value of x2 = 4.5
+Test Case 3:
+Value of x1 = 1
+Value of x2 = -2
+Value of x3 = -2
+Test Case 4:
+Value of x1 = -0.181818
+Value of x2 = 0.272727
+Value of x3 = 1.27273
+Value of x4 = 1.45455
+Test Case 5:
+Value of x1 = 1
+Value of x2 = 2

@@ -1,0 +1,17 @@
+Test Case 1:
+Value of x1 = 2
+Value of x2 = 3
+Test Case 2:
+Value of x1 = 2
+Value of x2 = 3
+Value of x3 = -1
+Test Case 3:
+Value of x1 = 2
+Value of x2 = 3
+Value of x3 = 2
+Test Case 4:
+Value of x1 = 1.54545
+Value of x2 = 1.18182
+Test Case 5:
+Value of x1 = 2
+Value of x2 = -1

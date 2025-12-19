@@ -13,7 +13,8 @@ int main()
     int t;
     fin>>t;
 
-    for (int i=1; i<=t;i++) {
+    for (int i=1; i<=t;i++) 
+    {
         fout << "Test case #" <<i<< ":\n";
 
         int n;

@@ -2,8 +2,7 @@
 
 ## Differentiation Using Backward Interpolation Theory
 
-[Backward Interpolation for Differentiation (Concept):
-Backward interpolation estimates the value of a function at points near the end of a tabulated data set. For differentiation, it uses the function values at equally spaced points to approximate derivatives. A backward difference table is constructed, and derivatives are expressed in terms of these backward differences.It is most useful when data is equally spaced and the point of interest is near the last entries of the table.This is essentially the reverse approach of forward interpolation, suitable for end-of-table calculations.]
+Backward interpolation estimates the value of a function at points near the end of a tabulated data set. For differentiation, it uses the function values at equally spaced points to approximate derivatives. A backward difference table is constructed, and derivatives are expressed in terms of these backward differences.It is most useful when data is equally spaced and the point of interest is near the last entries of the table.This is essentially the reverse approach of forward interpolation, suitable for end-of-table calculations.
 
 ## Differentiation Using Backward Interpolation Code
 
@@ -22,7 +21,8 @@ int main() {
     int t;
     fin>>t;
 
-    for (int i = 1; i <= t; i++) {
+    for (int i = 1; i <= t; i++) 
+    {
         fout << "Test case #" << i << ":\n";
         int n;
         fin >> n;
@@ -73,7 +73,7 @@ int main() {
 ## Differentiation Using Backward Interpolation Input
 
 ```
-[4
+4
 4
 0 1 2 3
 1 3 7 13
@@ -86,13 +86,13 @@ int main() {
 4
 2 4 6 8
 4 16 36 64
-]
+
 ```
 
 ## Differentiation Using Backward Interpolation Output
 
 ```
-[Test case #1:
+Test case #1:
 First derivative at x = 3.000000 : 7.000000
 Second derivative at x = 3.000000 : 2.000000
 
@@ -108,5 +108,5 @@ Test case #4:
 First derivative at x = 8.000000 : 16.000000
 Second derivative at x = 8.000000 : 2.000000
 
-]
+
 ```

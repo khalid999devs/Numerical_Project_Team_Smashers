@@ -2,15 +2,16 @@
 
 ## Newton's Backward Interpolation Theory
 
-[Newton’s backward interpolation is a numerical method used to estimate the value of a function when the required value lies near the end of the given data set. It is applicable only when the x-values are equally spaced. The method uses a backward difference table, which is formed from the given data by computing successive differences starting from the last data point. Using these backward differences, an interpolation polynomial is constructed to approximate the function value. Newton’s backward interpolation is commonly used in numerical analysis when interpolation is needed close to the last known value and provides good accuracy under equal spacing conditions.]
+Newton’s backward interpolation is a numerical method used to estimate the value of a function when the required value lies near the end of the given data set. It is applicable only when the x-values are equally spaced. The method uses a backward difference table, which is formed from the given data by computing successive differences starting from the last data point. Using these backward differences, an interpolation polynomial is constructed to approximate the function value. Newton’s backward interpolation is commonly used in numerical analysis when interpolation is needed close to the last known value and provides good accuracy under equal spacing conditions.
 
 ## Newton's Backward Interpolation Code
 
 ```cpp
-#include <bits/stdc++.h>
+#include<bits/stdc++.h>
 using namespace std;
 
-int main() {
+int main()
+ {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
 
@@ -24,7 +25,7 @@ int main() {
     fin>>t;
 
     for (int i =1;i<=t; i++)
-        {
+      {
         fout << "Test case #" << i << ":\n";
 
         int n;
@@ -39,7 +40,7 @@ int main() {
         for (int i = 0; i < n; i++) diff[i][0] = y[i];
 
         for (int j = 1; j < n; j++)
-            {
+        {
             for (int i = n - 1; i >= j; i--)
             {
                 diff[i][j] = diff[i][j-1] - diff[i-1][j-1];
@@ -70,7 +71,7 @@ int main() {
 
         fout << "\nInterpolated values:\n";
 
-        for (int qi = 0; qi < q; qi++) {
+        for (int i = 0; i < q; i++) {
             double xq;
             fin >> xq;
 
@@ -100,7 +101,7 @@ int main() {
 ## Newton's Backward Interpolation Input
 
 ```
-[5
+5
 4
 0 1 2 3
 1 3 7 13
@@ -129,13 +130,13 @@ int main() {
 2
 5.5
 6.5
-]
+
 ```
 
 ## Newton's Backward Interpolation Output
 
 ```
-[Test case #1:
+Test case #1:
 Given points (x, y):
   0.000  1.000
   1.000  3.000
@@ -228,5 +229,5 @@ Interpolated values:
   P(5.500) = 16.625
   P(6.500) = 22.625
 
-]
+
 ```

@@ -2,7 +2,7 @@
 
 ## Divided Difference Theory
 
-[Divided difference is an interpolation method used to estimate function values from given data points when the x-values are not equally spaced. It organizes the data into a divided difference table, where each column represents successive changes in the function values. The interpolation polynomial is built step by step using the top row of this table. The method is flexible, efficient for adding new data points, and widely used in numerical analysis and engineering applications.]
+Divided difference is an interpolation method used to estimate function values from given data points when the x-values are not equally spaced. It organizes the data into a divided difference table, where each column represents successive changes in the function values. The interpolation polynomial is built step by step using the top row of this table. The method is flexible, efficient for adding new data points, and widely used in numerical analysis.
 
 ## Divided Difference Code
 
@@ -10,7 +10,8 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-int main() {
+int main()
+ {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
 
@@ -22,8 +23,8 @@ int main() {
     int t;
     fin >> t;
 
-    for (int tc = 1; tc <= t; tc++) {
-        fout << "Test case #" << tc << ":\n";
+    for (int i = 1; i <= t; i++) {
+        fout << "Test case #" << i << ":\n";
 
         int n;
         fin >> n;
@@ -35,8 +36,10 @@ int main() {
         vector<vector<double>> diff(n, vector<double>(n, 0));
         for (int i = 0; i < n; i++) diff[i][0] = y[i];
 
-        for (int j = 1; j < n; j++) {
-            for (int i = 0; i < n - j; i++) {
+        for (int j = 1; j < n; j++)
+        {
+            for (int i = 0; i < n - j; i++) 
+            {
                 diff[i][j] = (diff[i + 1][j - 1] - diff[i][j - 1]) / (x[i + j] - x[i]);
             }
         }
@@ -50,7 +53,7 @@ int main() {
 
         fout << "\nDivided Difference Table:\n";
 
-        // Header
+        
         fout << setw(2) << "i" << "   " << setw(8) << "x[i]" << "   " << setw(8) << "f[xi]";
         for (int j = 1; j < n; j++) {
             fout << "   " << setw(12) << "f[x0";
@@ -59,7 +62,7 @@ int main() {
         }
         fout << "\n";
 
-        // Table values
+        
         for (int i = 0; i < n; i++) {
             fout << setw(2) << i << "   ";
             fout << setw(8) << x[i] << "   ";
@@ -69,12 +72,14 @@ int main() {
         }
 
         fout << "\nInterpolated values:\n";
-        for (int qi = 0; qi < q; qi++) {
+        for (int qi = 0; qi < q; qi++)
+        {
             double xq;
             fin >> xq;
 
             double result = diff[0][0];
-            for (int i = 1; i < n; i++) {
+            for (int i = 1; i < n; i++) 
+            {
                 double term = 1.0;
                 for (int j = 0; j < i; j++)
                     term *= (xq - x[j]);
@@ -95,7 +100,7 @@ int main() {
 ## Divided Difference Input
 
 ```
-[5
+5
 4
 0 1 2 3
 1 3 7 13
@@ -124,13 +129,13 @@ int main() {
 2
 4
 6
-]
+
 ```
 
 ## Divided Difference Output
 
 ```
-[Test case #1:
+Test case #1:
 Given points (x, y):
  0.000   1.000
  1.000   3.000
@@ -152,9 +157,9 @@ Test case #2:
 Given points (x, y):
  1.000   1.000
  2.000   8.000
- 3.000  27.000
- 4.000  64.000
- 5.000  125.000
+ 3.000   27.000
+ 4.000   64.000
+ 5.000   125.000
 
 Divided Difference Table:
  i       x[i]          f[xi]     f[x0,x1]   f[x0,x1,x2] f[x0,x1,x2,x3]   f[x0,x1,x2,x3,x4]
@@ -218,5 +223,5 @@ Interpolated values:
   P(4.000) = 9.500
   P(6.000) = 19.500
 
-]
+
 ```

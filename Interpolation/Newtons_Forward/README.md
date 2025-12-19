@@ -2,7 +2,7 @@
 
 ## Newton's Forward Interpolation Theory
 
-[Newton’s forward interpolation is a numerical method used to estimate the value of a function when the required value lies near the beginning of the given data set. It requires equally spaced x-values. The method uses a forward difference table, where successive differences are calculated starting from the first data point. Using these forward differences, an interpolation polynomial is constructed step by step to approximate the function value. Newton’s forward interpolation is widely used in numerical analysis for points near the start of the data set and provides accurate results for equally spaced data.]
+Newton’s forward interpolation is a numerical method used to estimate the value of a function when the required value lies near the beginning of the given data set. It requires equally spaced x-values. The method uses a forward difference table, where successive differences are calculated starting from the first data point. Using these forward differences, an interpolation polynomial is constructed step by step to approximate the function value. Newton’s forward interpolation is widely used in numerical analysis for points near the start of the data set and provides accurate results for equally spaced data.
 
 ## Newton's Forward Interpolation Code
 
@@ -83,7 +83,8 @@ int main()
 
         fout << "\nInterpolated values:\n";
 
-        for (int i=0; i<q;i++) {
+        for (int i=0; i<q;i++) 
+        {
             double xq;
             fin >> xq;
 
@@ -93,7 +94,8 @@ int main()
             double numer = 1.0;
             double denom_fact = 1.0;
 
-            for (int k = 1; k < n; k++) {
+            for (int k = 1; k < n; k++) 
+            {
                 numer *= (s - (k - 1));
                 denom_fact *= k;
                 result += (numer / denom_fact) * diff[0][k];
@@ -113,7 +115,7 @@ int main()
 ## Newton's Forward Interpolation Input
 
 ```
-[5
+5
 4
 0 1 2 3
 1 3 7 13
@@ -142,13 +144,13 @@ int main()
 2
 4
 6
-]
+
 ```
 
 ## Newton's Forward Interpolation Output
 
 ```
-[Test case #1:
+Test case #1:
 Given points (x, y):
   0  1
   1  3
@@ -157,7 +159,7 @@ Given points (x, y):
 Step size h = 1
 
 Forward Difference Table:
- i           x[i]            y         Δ^1y         Δ^2y         Δ^3y
+ i           x[i]            y         Δ^1y         Δ^2y        Δ^3y
  0            0              1           2           2           0
  1            1              3           4           2
  2            2              7           6
@@ -241,5 +243,5 @@ Interpolated values:
   P(4) = 9.5
   P(6) = 19.5
 
-]
+
 ```

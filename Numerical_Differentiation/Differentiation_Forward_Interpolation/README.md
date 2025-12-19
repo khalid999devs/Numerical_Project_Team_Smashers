@@ -2,7 +2,7 @@
 
 ## Differentiation Using Forward Interpolation Theory
 
-[Forward interpolation estimates the value of a function at points near the beginning of a tabulated set of data. When applied to differentiation, it uses the values of the function at equally spaced points to approximate derivatives. Essentially, it constructs a forward difference table and expresses the derivative in terms of these differences, allowing you to calculate the slope (first derivative) or curvature (higher derivatives) without knowing the explicit function formula.It’s especially useful when data is tabulated and evenly spaced, and the point of interest is near the start of the table.]
+Forward interpolation estimates the value of a function at points near the beginning of a tabulated set of data. When applied to differentiation, it uses the values of the function at equally spaced points to approximate derivatives. Essentially, it constructs a forward difference table and expresses the derivative in terms of these differences, allowing you to calculate the slope (first derivative) or curvature (higher derivatives) without knowing the explicit function formula.It’s especially useful when data is tabulated and evenly spaced, and the point of interest is near the start of the table.
 
 ## Differentiation Using Forward Interpolation Code
 
@@ -22,7 +22,8 @@ int main()
     int t;
     fin>>t;
 
-    for (int i=1; i<=t;i++) {
+    for (int i=1; i<=t;i++) 
+    {
         fout << "Test case #" <<i<< ":\n";
 
         int n;
@@ -72,7 +73,7 @@ int main()
 ## Differentiation Using Forward Interpolation Input
 
 ```
-[4
+4
 4
 0 1 2 3
 1 3 7 13
@@ -85,13 +86,13 @@ int main()
 4
 2 4 6 8
 4 16 36 64
-]
+
 ```
 
 ## Differentiation Using Forward Interpolation Output
 
 ```
-[Test case #1:
+Test case #1:
 First derivative at x = 0.000000 : 1.000000
 Second derivative at x = 0.000000 : 2.000000
 
@@ -107,5 +108,5 @@ Test case #4:
 First derivative at x = 2.000000 : 4.000000
 Second derivative at x = 2.000000 : 2.000000
 
-]
+
 ```

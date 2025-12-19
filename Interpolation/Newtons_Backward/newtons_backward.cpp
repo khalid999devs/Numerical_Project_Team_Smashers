@@ -1,7 +1,8 @@
-#include <bits/stdc++.h>
+#include<bits/stdc++.h>
 using namespace std;
 
-int main() {
+int main() 
+{
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
 
@@ -14,7 +15,7 @@ int main() {
     int t;
     fin>>t;
 
-    for (int i =1;i<=t; i++)
+    for (int i=1;i<=t; i++)
         {
         fout << "Test case #" << i << ":\n";
 
@@ -51,7 +52,8 @@ int main() {
         for (int j = 1; j < n; j++) fout << "         Δ^" << j << "y";
         fout << "\n";
 
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i < n; i++) 
+        {
             fout << setw(2) << i << "   ";
             fout << setw(10) << x[i] << "   ";
             for (int j = 0; j <= i; j++)
@@ -61,7 +63,8 @@ int main() {
 
         fout << "\nInterpolated values:\n";
 
-        for (int qi = 0; qi < q; qi++) {
+        for (int i = 0; i < q; i++)
+        {
             double xq;
             fin >> xq;
 

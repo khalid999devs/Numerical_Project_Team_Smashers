@@ -2,32 +2,31 @@
 
 ## Polynomial Regression Theory
 
-Polynomial regression is a curve fitting technique used when the relationship between variables is nonlinear. It approximates the data using a polynomial equation of higher degree.
+Polynomial regression is a curve fitting technique used when the relation is nonlinear. It uses a polynomial equation of higher degree for approximation.
 
 ### Key Concepts:
 
-- Extension of linear regression
+- Based on Least Squares Method
 - Fits data to a polynomial of degree m
-- Uses the Least Squares Method
-- Coefficients are determined using normal equations
+- It is an extension of linear regression
 
 ### Algorithm Steps:
 
 - Assume a polynomial equation of required degree
 - Form normal equations using sums of powers of x
-- Convert equations into matrix form
-- Solve the system using Gaussian Elimination
+- Convert equation into matrix 
+- Solve it using Gauss Elimination
 - Determine polynomial coefficients
 - Construct the fitted polynomial equation
 
 ### Advantages:
 
-- Can model complex nonlinear trends with more flexibility than linear regression
-- Provides accurate approximation within the given data range
+- Model complex non-linear relation 
+- Provides accurate approximation within a given range
 
 ### Disadvantages:
 
-- Higher degree polynomials may cause overfitting and are computationally expensive
+- Higher degree polynomial may cause overfitting 
 - Poor extrapolation outside data range with potential numerical instability
 
 ## Polynomial Regression Code

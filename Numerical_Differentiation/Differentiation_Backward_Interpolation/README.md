@@ -9,7 +9,6 @@ Backward interpolation differentiation is a numerical method used to approximate
 - Uses backward difference table to calculate derivatives
 - Suitable for points near the end of tabulated data
 - Requires equally spaced data points
-- Complementary method to forward interpolation differentiation
 - Based on finite difference approximation using backward differences
 
 **Algorithm Steps:**
@@ -27,7 +26,7 @@ Backward interpolation differentiation is a numerical method used to approximate
 **Advantages:**
 
 - Excellent for derivatives near end of data set without explicit function formula
-- Systematic approach using backward differences with good tabulated data analysis
+- Systematic approach using backward differences 
 
 **Disadvantages:**
 

@@ -2,14 +2,12 @@
 
 ## False Position Theory
 
-The False Position Method (also known as Regula Falsi Method or Method of Chords) is a root-finding algorithm that combines features of the bisection method with linear interpolation.
+The False Position Method is a root-finding algorithm that combines features of the bisection method with linear interpolation.
 
 **Key Concepts:**
 
 - Similar to bisection but uses a weighted average instead of simple midpoint
-- Draws a secant line between two points and finds where it crosses the x-axis
 - Generally converges faster than bisection method
-- Always keeps the root bracketed between two points
 
 **Algorithm Steps:**
 
@@ -111,15 +109,6 @@ int main() {
 0.0001
 20
 ```
-
-**Input Format:**
-
-- Line 1: First point 'a' of the interval
-- Line 2: Second point 'b' of the interval
-- Line 3: Tolerance (desired accuracy)
-- Line 4: Maximum number of iterations
-
-**Note:** f(a) and f(b) must have opposite signs.
 
 ## False Position Output
 

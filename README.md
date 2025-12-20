@@ -4,7 +4,7 @@ This is a Numerical Methods Laboratory Project based on the Numerical Lab of the
 
 ## Table of Contents
 
-**<font size="5">[Solution of Linear Equations](#solution-of-linear-equations)</font>**
+**<font size="7">[Solution of Linear Equations](#solution-of-linear-equations)</font>**
 
 - **[Gauss Elimination Method](#gauss-elimination-method)**
 
@@ -33,7 +33,7 @@ This is a Numerical Methods Laboratory Project based on the Numerical Lab of the
   - [Input](#matrix-inversion-input)
   - [Output](#matrix-inversion-output)
 
-**<font size="5">[Solution of Non-Linear Equations](#solution-of-non-linear-equations)</font>**
+**<font size="7">[Solution of Non-Linear Equations](#solution-of-non-linear-equations)</font>**
 
 - **[Bi-section Method](#bi-section-method)**
 
@@ -62,7 +62,7 @@ This is a Numerical Methods Laboratory Project based on the Numerical Lab of the
   - [Input](#newton-raphson-input)
   - [Output](#newton-raphson-output)
 
-**<font size="5">[Interpolation & Approximation](#interpolation--approximation)</font>**
+**<font size="7">[Interpolation & Approximation](#interpolation--approximation)</font>**
 
 - **[Newton's Forward Interpolation](#newtons-forward-interpolation)**
 
@@ -84,7 +84,7 @@ This is a Numerical Methods Laboratory Project based on the Numerical Lab of the
   - [Input](#divided-difference-input)
   - [Output](#divided-difference-output)
 
-**<font size="5">[Curve Fitting/Regression](#curve-fittingregression)</font>**
+**<font size="7">[Curve Fitting/Regression](#curve-fittingregression)</font>**
 
 - **[Linear Regression](#linear-regression)**
 
@@ -106,7 +106,7 @@ This is a Numerical Methods Laboratory Project based on the Numerical Lab of the
   - [Input](#transcendental-regression-input)
   - [Output](#transcendental-regression-output)
 
-**<font size="5">[Numerical Integration](#numerical-integration)</font>**
+**<font size="7">[Numerical Integration](#numerical-integration)</font>**
 
 - **[Simpson's 1/3 Rule](#simpsons-13-rule)**
 
@@ -121,7 +121,7 @@ This is a Numerical Methods Laboratory Project based on the Numerical Lab of the
   - [Input](#simpsons-38-rule-input)
   - [Output](#simpsons-38-rule-output)
 
-**<font size="5">[Numerical Differentiation](#numerical-differentiation)</font>**
+**<font size="7">[Numerical Differentiation](#numerical-differentiation)</font>**
 
 - **[Differentiation Using Forward Interpolation](#differentiation-using-forward-interpolation)**
 
@@ -136,7 +136,7 @@ This is a Numerical Methods Laboratory Project based on the Numerical Lab of the
   - [Input](#differentiation-using-backward-interpolation-input)
   - [Output](#differentiation-using-backward-interpolation-output)
 
-**<font size="5">[Solution of Ordinary Differential Equations](#solution-of-ordinary-differential-equations)</font>**
+**<font size="7">[Solution of Ordinary Differential Equations](#solution-of-ordinary-differential-equations)</font>**
 
 - **[Runge-Kutta Method](#runge-kutta-method)**
   - [Theory](#runge-kutta-theory)
@@ -150,7 +150,6 @@ This is a Numerical Methods Laboratory Project based on the Numerical Lab of the
 # Solution of Linear Equations
 
 <a id="gauss-elimination-method"></a>
-
 # Gauss Elimination Method &nbsp;&nbsp;<sub>[⬆ Back to TOC](#table-of-contents)</sub>
 
 ## Gauss Elimination Theory
@@ -811,7 +810,6 @@ Matrix is singular and cannot be inverted.
 # Solution of Non-Linear Equations
 
 <a id="bi-section-method"></a>
-
 # Bi-section Method &nbsp;&nbsp;<sub>[⬆ Back to TOC](#table-of-contents)</sub>
 
 ## Bisection Theory
@@ -1337,7 +1335,6 @@ Function value at root: f(1.582884) = 0.000001
 # Interpolation & Approximation
 
 <a id="newtons-forward-interpolation"></a>
-
 # Newton's Forward Interpolation &nbsp;&nbsp;<sub>[⬆ Back to TOC](#table-of-contents)</sub>
 
 ## Newton's Forward Interpolation Theory
@@ -2147,7 +2144,6 @@ Interpolated values:
 # Curve Fitting/Regression
 
 <a id="linear-regression"></a>
-
 # Linear Regression &nbsp;&nbsp;<sub>[⬆ Back to TOC](#table-of-contents)</sub>
 
 ## Linear Regression Theory
@@ -2709,7 +2705,6 @@ Test Case 3: Value of integral = 0.0993483
 # Numerical Differentiation
 
 <a id="differentiation-using-forward-interpolation"></a>
-
 # Differentiation Using Forward Interpolation &nbsp;&nbsp;<sub>[⬆ Back to TOC](#table-of-contents)</sub>
 
 ## Differentiation Using Forward Interpolation Theory
@@ -3002,7 +2997,6 @@ Second derivative at x = 8.000000 : 2.000000
 # Solution of Ordinary Differential Equations
 
 <a id="runge-kutta-method"></a>
-
 # Runge-Kutta Method &nbsp;&nbsp;<sub>[⬆ Back to TOC](#table-of-contents)</sub>
 
 ## Runge Kutta Theory

@@ -2,14 +2,13 @@
 
 ## Secant Theory
 
-The Secant Method is an iterative root-finding algorithm that uses a succession of roots of secant lines to approximate a root of a function. It's faster than bisection but doesn't require derivative calculation like Newton-Raphson.
+The Secant Method is an iterative root-finding algorithm that uses a succession of roots of secant lines to approximate a root of a function. 
 
 **Key Concepts:**
 
 - Uses two initial guesses to approximate the derivative
 - Does not require the function to be differentiable
 - Approximates the tangent line with a secant line through two points
-- Convergence is not always guaranteed but is generally fast
 
 **Formula:**
 
@@ -27,17 +26,12 @@ x(n+1) = x(n) - f(x(n)) × (x(n) - x(n-1)) / (f(x(n)) - f(x(n-1)))
 **Advantages:**
 
 - Faster super-linear convergence than bisection and false position methods
-- No need to calculate derivatives, only requires function evaluations
+- No need to calculate derivatives
 
 **Disadvantages:**
 
-- Convergence not guaranteed and may diverge with poor initial guesses
+- Convergence not guaranteed 
 - Requires two initial values unlike Newton-Raphson method
-
-**Comparison with Newton-Raphson:**
-
-- Secant: Uses finite difference approximation, no derivative needed
-- Newton: Uses actual derivative, faster convergence (quadratic vs super-linear)
 
 ## Secant Code
 
@@ -110,15 +104,6 @@ int main() {
 0.0001
 20
 ```
-
-**Input Format:**
-
-- Line 1: First initial guess (x0)
-- Line 2: Second initial guess (x1)
-- Line 3: Tolerance (desired accuracy)
-- Line 4: Maximum number of iterations
-
-**Note:** Choose initial guesses close to the expected root for better convergence.
 
 ## Secant Output
 

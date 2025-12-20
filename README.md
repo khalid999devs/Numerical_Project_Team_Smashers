@@ -146,6 +146,7 @@ This is a Numerical Methods Laboratory Project based on the Numerical Lab of the
 
 ---
 
+<a id="solution-of-linear-equations"></a>
 # Solution of Linear Equations
 
 <a id="gauss-elimination-method"></a>
@@ -806,6 +807,7 @@ Matrix is singular and cannot be inverted.
 
 ```
 
+<a id="solution-of-non-linear-equations"></a>
 # Solution of Non-Linear Equations
 
 <a id="bi-section-method"></a>
@@ -1331,6 +1333,7 @@ Root found at x = 1.582884
 Function value at root: f(1.582884) = 0.000001
 ```
 
+<a id="interpolation--approximation"></a>
 # Interpolation & Approximation
 
 <a id="newtons-forward-interpolation"></a>
@@ -2140,6 +2143,7 @@ Interpolated values:
 
 ---
 
+<a id="curve-fittingregression"></a>
 # Curve Fitting/Regression
 
 <a id="linear-regression"></a>
@@ -2479,6 +2483,7 @@ b = 0.999998
 Model: y = 1.000008 * e^(0.999998x)
 ```---
 
+<a id="numerical-integration"></a>
 # Numerical Integration
 
 <a id="simpsons-13-rule"></a>
@@ -2700,6 +2705,7 @@ Test Case 3: Value of integral = 0.0993483
 
 ---
 
+<a id="numerical-differentiation"></a>
 # Numerical Differentiation
 
 <a id="differentiation-using-forward-interpolation"></a>
@@ -2992,6 +2998,7 @@ Second derivative at x = 8.000000 : 2.000000
 
 ---
 
+<a id="solution-of-ordinary-differential-equations"></a>
 # Solution of Ordinary Differential Equations
 
 <a id="runge-kutta-method"></a>

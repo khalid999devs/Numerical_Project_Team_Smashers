@@ -37,12 +37,13 @@ Where:
 **Disadvantages:**
 
 - Requires derivative calculation and may diverge if f'(x) = 0
-- No guaranteed convergence 
+- No guaranteed convergence
 
 ## Newton Raphson Code
 
 ```cpp
 #include <iostream>
+#include <fstream>
 #include <cmath>
 #include <iomanip>
 using namespace std;
@@ -55,8 +56,8 @@ double df(double x) {
     return 3*x*x - 1;
 }
 
-void newtonRaphson(double x0, double tolerance, int maxIter) {
-    cout << fixed << setprecision(6);
+void newtonRaphson(ofstream &fout, double x0, double tolerance, int maxIter) {
+    fout << fixed << setprecision(6);
 
     double x1, fx, dfx;
 
@@ -65,45 +66,48 @@ void newtonRaphson(double x0, double tolerance, int maxIter) {
         dfx = df(x0);
 
         if (fabs(dfx) < 1e-10) {
-            cout << "\nError: Derivative is zero. Cannot continue." << endl;
+            fout << "\nError: Derivative is zero. Cannot continue." << endl;
             return;
         }
 
         x1 = x0 - fx / dfx;
 
-        cout << i << "\t" << x0 << "\t" << fx << "\t"
+        fout << i << "\t" << x0 << "\t" << fx << "\t"
              << dfx << "\t" << x1 << endl;
 
         if (fabs(x1 - x0) < tolerance) {
-            cout << "\nConvergence achieved!" << endl;
+            fout << "\nConvergence achieved!" << endl;
             x0 = x1;
             break;
         }
 
         if (fabs(fx) < tolerance) {
-            cout << "\nRoot found (f(x) ~ 0)!" << endl;
+            fout << "\nRoot found (f(x) ~ 0)!" << endl;
             break;
         }
 
         x0 = x1;
     }
 
-    cout << "\nRoot found at x = " << x0 << endl;
-    cout << "Function value at root: f(" << x0 << ") = " << f(x0) << endl;
+    fout << "\nRoot found at x = " << x0 << endl;
+    fout << "Function value at root: f(" << x0 << ") = " << f(x0) << endl;
 }
 
 int main() {
+    ifstream fin("input.txt");
+    ofstream fout("output.txt");
+
     double x0, tolerance;
     int maxIter;
 
-    cout << "\nEnter initial guess (x0): ";
-    cin >> x0;
-    cout << "Enter tolerance (e.g., 0.0001): ";
-    cin >> tolerance;
-    cout << "Enter maximum iterations: ";
-    cin >> maxIter;
+    fin >> x0;
+    fin >> tolerance;
+    fin >> maxIter;
 
-    newtonRaphson(x0, tolerance, maxIter);
+    newtonRaphson(fout, x0, tolerance, maxIter);
+
+    fin.close();
+    fout.close();
 
     return 0;
 }
@@ -120,10 +124,6 @@ int main() {
 ## Newton Raphson Output
 
 ```
-Enter initial guess (x0): 2.0
-Enter tolerance (e.g., 0.0001): 0.0001
-Enter maximum iterations: 20
-
 1	2.000000	4.000000	11.000000	1.636364
 2	1.636364	0.360465	7.030992	1.585111
 3	1.585111	0.014527	6.535517	1.582887

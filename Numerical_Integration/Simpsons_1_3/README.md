@@ -13,18 +13,15 @@ Simpson's 1/3 rule is a numerical integration method used to approximate definit
 
 **Formula:**
 
+Integral = (h/3) * [f(x0) + 4*f(x1) + 2*f(x2) + 4*f(x3) + ... + 4\*f(xn-1) + f(xn)]
 
-### Integral = (h/3) * [f(x0) + 4*f(x1) + 2*f(x2) + 4*f(x3) + ... + 4*f(xn-1) + f(xn)]
-
-
-Where h = (b-a)/n 
-
+Where h = (b-a)/n
 
 **Algorithm Steps:**
 
 1. Divide interval [a,b] into even number of sub-intervals (n)
 2. Calculate step size h=(b-a)/n
-3. Calculate function values at all points xi= a + i*h 
+3. Calculate function values at all points xi= a + i\*h
 4. Add f(a) + f(b)
 5. Add 4 times sum of odd-indexed terms
 6. Add 2 times sum of even-indexed terms

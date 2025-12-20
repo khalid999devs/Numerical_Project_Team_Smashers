@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "lldb",
+      "request": "launch",
+      "args": [],
+      "cwd": "/Users/khalid999devs/Programmings/Projects/KUET/2nd-year/Numerical_Project_Team_Smashers/Differential_Equations/Runge_Kutta",
+      "program": "/Users/khalid999devs/Programmings/Projects/KUET/2nd-year/Numerical_Project_Team_Smashers/Differential_Equations/Runge_Kutta/build/Debug/outDebug"
+    }
+  ]
+}

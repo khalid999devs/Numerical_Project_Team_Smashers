@@ -2,7 +2,7 @@
 
 ## Secant Theory
 
-The Secant Method is an iterative root-finding algorithm that uses a succession of roots of secant lines to approximate a root of a function. 
+The Secant Method is an iterative root-finding algorithm that uses a succession of roots of secant lines to approximate a root of a function.
 
 **Key Concepts:**
 
@@ -30,13 +30,14 @@ x(n+1) = x(n) - f(x(n)) × (x(n) - x(n-1)) / (f(x(n)) - f(x(n-1)))
 
 **Disadvantages:**
 
-- Convergence not guaranteed 
+- Convergence not guaranteed
 - Requires two initial values unlike Newton-Raphson method
 
 ## Secant Code
 
 ```cpp
 #include <iostream>
+#include <fstream>
 #include <cmath>
 #include <iomanip>
 using namespace std;
@@ -45,8 +46,8 @@ double f(double x) {
     return x*x*x - x - 2;
 }
 
-void secantMethod(double x0, double x1, double tolerance, int maxIter) {
-    cout << fixed << setprecision(6);
+void secantMethod(ofstream &fout, double x0, double x1, double tolerance, int maxIter) {
+    fout << fixed << setprecision(6);
 
     double x2, f0, f1;
 
@@ -55,17 +56,17 @@ void secantMethod(double x0, double x1, double tolerance, int maxIter) {
         f1 = f(x1);
 
         if (fabs(f1 - f0) < 1e-10) {
-            cout << "\nError: Division by zero encountered!" << endl;
+            fout << "\nError: Division by zero encountered!" << endl;
             return;
         }
 
         x2 = x1 - (f1 * (x1 - x0)) / (f1 - f0);
 
-        cout << i << "\t" << x0 << "\t" << x1 << "\t"
+        fout << i << "\t" << x0 << "\t" << x1 << "\t"
              << x2 << "\t" << f(x2) << endl;
 
         if (fabs(x2 - x1) < tolerance) {
-            cout << "\nConvergence achieved!" << endl;
+            fout << "\nConvergence achieved!" << endl;
             break;
         }
 
@@ -73,24 +74,26 @@ void secantMethod(double x0, double x1, double tolerance, int maxIter) {
         x1 = x2;
     }
 
-    cout << "\nRoot found at x = " << x2 << endl;
-    cout << "Function value at root: f(" << x2 << ") = " << f(x2) << endl;
+    fout << "\nRoot found at x = " << x2 << endl;
+    fout << "Function value at root: f(" << x2 << ") = " << f(x2) << endl;
 }
 
 int main() {
+    ifstream fin("input.txt");
+    ofstream fout("output.txt");
+
     double x0, x1, tolerance;
     int maxIter;
 
-    cout << "\nEnter first initial guess (x0): ";
-    cin >> x0;
-    cout << "Enter second initial guess (x1): ";
-    cin >> x1;
-    cout << "Enter tolerance (e.g., 0.0001): ";
-    cin >> tolerance;
-    cout << "Enter maximum iterations: ";
-    cin >> maxIter;
+    fin >> x0;
+    fin >> x1;
+    fin >> tolerance;
+    fin >> maxIter;
 
-    secantMethod(x0, x1, tolerance, maxIter);
+    secantMethod(fout, x0, x1, tolerance, maxIter);
+
+    fin.close();
+    fout.close();
 
     return 0;
 }
@@ -108,11 +111,6 @@ int main() {
 ## Secant Output
 
 ```
-Enter first initial guess (x0): 1.5
-Enter second initial guess (x1): 2.0
-Enter tolerance (e.g., 0.0001): 0.0001
-Enter maximum iterations: 20
-
 1	1.500000	2.000000	1.607143	-0.175623
 2	2.000000	1.607143	1.658824	0.062439
 3	1.607143	1.658824	1.643586	-0.014750

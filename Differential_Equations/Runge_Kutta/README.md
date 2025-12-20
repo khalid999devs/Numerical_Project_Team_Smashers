@@ -8,11 +8,12 @@ The Runge-Kutta Method is one of the most powerful and widely-used numerical tec
 
 - Used to solve first-order differential equations of the form dy/dx = f(x, y)
 - Does not require calculation of higher-order derivatives
-- More accurate than Euler's method 
+- More accurate than Euler's method
 
 **Formula:**
 
 The method calculates four slopes at different points within the interval and takes their weighted average:
+
 ```
 k1 = h * f(x, y)
 k2 = h * f(x + h/2, y + k1/2)
@@ -21,6 +22,7 @@ k4 = h * f(x + h, y + k3)
 
 y(next) = y + (k1 + 2*k2 + 2*k3 + k4) / 6
 ```
+
 **Algorithm Steps:**
 
 1. Start with initial values x0 and y0
@@ -57,17 +59,20 @@ double f(double x, double y) {
 }
 
 int main() {
+    ifstream fin("input.txt");
+    ofstream fout("output.txt");
+
     double x0, y0, x, h;
 
-    cin >> x0;
-    cin >> y0;
-    cin >> x;
-    cin >> h;
+    fin >> x0;
+    fin >> y0;
+    fin >> x;
+    fin >> h;
 
     int n = (int)((x - x0) / h);
     double y = y0;
 
-    cout << fixed << setprecision(6);
+    fout << fixed << setprecision(6);
 
     for (int i = 1; i <= n; i++) {
         double k1 = h * f(x0, y);
@@ -75,13 +80,16 @@ int main() {
         double k3 = h * f(x0 + h/2.0, y + k2/2.0);
         double k4 = h * f(x0 + h, y + k3);
 
-        cout << i << "\t" << x0 << "\t" << y << "\t" << k1 << "\t" << k2 << "\t" << k3 << "\t" << k4 << endl;
+        fout << i << "\t" << x0 << "\t" << y << "\t" << k1 << "\t" << k2 << "\t" << k3 << "\t" << k4 << endl;
 
         y = y + (k1 + 2*k2 + 2*k3 + k4) / 6.0;
         x0 = x0 + h;
     }
 
-    cout << "\nRoot: " << y << endl;
+    fout << "\nRoot: " << y << endl;
+
+    fin.close();
+    fout.close();
 
     return 0;
 }

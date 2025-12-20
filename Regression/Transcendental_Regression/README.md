@@ -4,13 +4,13 @@
 
 Transcendental regression is used when the relation follows an exponential pattern. It is generally applied in growth and decay processes.
 
-### Key Concepts:
+**Key Concepts:**
 
 - Used for exponential models of form y = ae^(bx)
 - Nonlinear equation is converted into linear using logarithms
 - Based on least squares after transformation
 
-### Algorithm Steps:
+**Algorithm Steps:**
 
 - Take logarithm on both sides of equation
 - Convert equation to ln(y)= ln(a) + bx
@@ -19,14 +19,14 @@ Transcendental regression is used when the relation follows an exponential patte
 - Calculate a by taking exponential of ln(a)
 - Substitute a and b into original equation
 
-### Advantages:
+**Advantages:**
 
-- Effectively models exponential growth or decay 
+- Effectively models exponential growth or decay
 - Useful in studies and systems with exponential behavior
 
-### Disadvantages:
+**Disadvantages:**
 
-- Cannot handle zero or negative y values 
+- Cannot handle zero or negative y values
 - Logarithmic transformation may amplify errors
 - unsuitable for non-exponential data
 
@@ -36,36 +36,43 @@ Transcendental regression is used when the relation follows an exponential patte
 #include <bits/stdc++.h>
 using namespace std;
 
-int main(){
+int main() {
+    ifstream fin("input.txt");
+    ofstream fout("output.txt");
+
     int n;
-    cin>>n;
+    fin >> n;
 
-    vector<double>x(n),y(n);
+    vector<double> x(n), y(n);
 
-    for(int i=0;i<n;i++){
-        cin >> x[i] >> y[i];
-      }
-    double sumX=0,sumY=0,sumXY=0,sumX2=0;
-
-    for(int i=0;i<n;i++){
-        double X=x[i];        // X = x
-        double Y=log(y[i]);   // Y = ln(y)
-
-        sumX +=X;
-        sumY +=Y;
-        sumXY += X*Y;
-        sumX2 += X*X;
+    for (int i = 0; i < n; i++) {
+        fin >> x[i] >> y[i];
     }
 
-    double b =(n*sumXY - sumX*sumY) / (n*sumX2 - sumX*sumX);
-    double A =(sumY - b*sumX)/n;
+    double sumX = 0, sumY = 0, sumXY = 0, sumX2 = 0;
 
-    double a =exp(A);   // a = e^A
+    for (int i = 0; i < n; i++) {
+        double X = x[i];        // X = x
+        double Y = log(y[i]);   // Y = ln(y)
 
-    cout<<fixed<<setprecision(6);
-    cout<<"a= "<<a<<endl;
-    cout<<"b= "<<b<<endl;
-    cout<<"Model:y = "<<a<<"* e^("<<b<<"x)"<<endl;
+        sumX += X;
+        sumY += Y;
+        sumXY += X * Y;
+        sumX2 += X * X;
+    }
+
+    double b = (n * sumXY - sumX * sumY) / (n * sumX2 - sumX * sumX);
+    double A = (sumY - b * sumX) / n;
+
+    double a = exp(A);   // a = e^A
+
+    fout << fixed << setprecision(6);
+    fout << "a = " << a << endl;
+    fout << "b = " << b << endl;
+    fout << "Model: y = " << a << " * e^(" << b << "x)" << endl;
+
+    fin.close();
+    fout.close();
 
     return 0;
 }
@@ -85,7 +92,7 @@ int main(){
 ## Transcendental Regression Output
 
 ```
-a= 1.000008
-b= 0.999998
-Model:y = 1.000008* e^(0.999998x)
+a = 1.000008
+b = 0.999998
+Model: y = 1.000008 * e^(0.999998x)
 ```

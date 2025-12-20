@@ -35,6 +35,7 @@ The False Position Method is a root-finding algorithm that combines features of 
 
 ```cpp
 #include <iostream>
+#include <fstream>
 #include <cmath>
 #include <iomanip>
 using namespace std;
@@ -43,29 +44,29 @@ double f(double x) {
     return x*x*x - x - 2;
 }
 
-void falsePosition(double a, double b, double tolerance, int maxIter) {
+void falsePosition(ofstream &fout, double a, double b, double tolerance, int maxIter) {
     if (f(a) * f(b) >= 0) {
-        cout << "Error: f(a) and f(b) must have opposite signs!" << endl;
+        fout << "Error: f(a) and f(b) must have opposite signs!" << endl;
         return;
     }
 
-    cout << fixed << setprecision(6);
+    fout << fixed << setprecision(6);
 
     double c, prev_c = 0;
 
     for (int i = 1; i <= maxIter; i++) {
         c = (a * f(b) - b * f(a)) / (f(b) - f(a));
 
-        cout << i << "\t" << a << "\t" << b << "\t"
+        fout << i << "\t" << a << "\t" << b << "\t"
              << c << "\t" << f(c) << endl;
 
         if (f(c) == 0.0) {
-            cout << "\nExact root found!" << endl;
+            fout << "\nExact root found!" << endl;
             break;
         }
 
         if (i > 1 && fabs(c - prev_c) < tolerance) {
-            cout << "\nDesired accuracy achieved!" << endl;
+            fout << "\nDesired accuracy achieved!" << endl;
             break;
         }
 
@@ -78,24 +79,26 @@ void falsePosition(double a, double b, double tolerance, int maxIter) {
         prev_c = c;
     }
 
-    cout << "\nRoot found at x = " << c << endl;
-    cout << "Function value at root: f(" << c << ") = " << f(c) << endl;
+    fout << "\nRoot found at x = " << c << endl;
+    fout << "Function value at root: f(" << c << ") = " << f(c) << endl;
 }
 
 int main() {
+    ifstream fin("input.txt");
+    ofstream fout("output.txt");
+
     double a, b, tolerance;
     int maxIter;
 
-    cout << "\nEnter the first point (a): ";
-    cin >> a;
-    cout << "Enter the second point (b): ";
-    cin >> b;
-    cout << "Enter tolerance (e.g., 0.0001): ";
-    cin >> tolerance;
-    cout << "Enter maximum iterations: ";
-    cin >> maxIter;
+    fin >> a;
+    fin >> b;
+    fin >> tolerance;
+    fin >> maxIter;
 
-    falsePosition(a, b, tolerance, maxIter);
+    falsePosition(fout, a, b, tolerance, maxIter);
+
+    fin.close();
+    fout.close();
 
     return 0;
 }
@@ -113,11 +116,6 @@ int main() {
 ## False Position Output
 
 ```
-Enter the first point (a): 1.5
-Enter the second point (b): 2.0
-Enter tolerance (e.g., 0.0001): 0.0001
-Enter maximum iterations: 20
-
 1	1.500000	2.000000	1.622951	-0.117362
 2	1.622951	2.000000	1.640119	-0.030693
 3	1.640119	2.000000	1.644511	-0.008172

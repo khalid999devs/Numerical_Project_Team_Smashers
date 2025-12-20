@@ -21,6 +21,16 @@ Integral = (3h/8) * [f(x0) + 3*f(x1) + 3*f(x2) + 2*f(x3) + 3\*f(x4) + ... + f(xn
 
 h=(b-a)/n
 
+**Algorithm Steps:**
+
+1. Divide interval [a,b] into n sub-intervals, where n must be a multiple of 3
+2. Calculate step size h=(b-a)/n
+3. Calculate function values at all points xi= a + i*h 
+4. Add f(a) + f(b)
+5. Add 3 times the sum of function values where i is not a multiple of 3
+6. Add 2 times the sum of function values where i is a multiple of 3(not limiting values of i)
+7. Multiply total by 3h/8
+
 **Advantages:**
 
 - Good accuracy

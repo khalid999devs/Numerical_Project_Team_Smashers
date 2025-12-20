@@ -2,13 +2,12 @@
 
 ## Bisection Theory
 
-The Bisection Method is one of the simplest and most reliable methods for finding the root of a non-linear equation. It works by repeatedly dividing an interval in half and selecting the subinterval where the root exists.
+The Bisection Method is one of the simplest and most reliable methods for finding the root of a non-linear equation. 
 
 **Key Concepts:**
 
 - Based on the Intermediate Value Theorem
 - If f(x) is continuous on [a, b] and f(a) × f(b) < 0, then there exists at least one root in (a, b)
-- Also known as interval halving method or binary search method
 
 **Algorithm Steps:**
 
@@ -21,8 +20,8 @@ The Bisection Method is one of the simplest and most reliable methods for findin
 
 **Advantages:**
 
-- Always converges if initial assumptions are met and simple to implement
-- No need for derivatives or complex calculations
+- Always converges if initial assumptions are met 
+- Simple solution
 
 **Disadvantages:**
 
@@ -96,14 +95,6 @@ int main() {
 2.0
 0.0001
 ```
-
-**Input Format:**
-
-- Line 1: First point 'a' of the interval
-- Line 2: Second point 'b' of the interval
-- Line 3: Tolerance (desired accuracy)
-
-**Note:** Ensure that f(a) and f(b) have opposite signs for the method to work.
 
 ## Bisection Output
 

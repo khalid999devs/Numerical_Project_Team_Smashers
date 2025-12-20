@@ -10,36 +10,35 @@ Simpson's 1/3 rule is a numerical integration method used to approximate definit
 - Approximates function using parabolas instead of straight lines
 - More accurate than trapezoidal rule
 - Based on fitting parabolas through three consecutive points
-- Uses weighted average with coefficients 1, 4, 2, 4, 2, ..., 4, 1
 
 **Formula:**
 
-```
-Integral = (h/3) * [f(x0) + 4*f(x1) + 2*f(x2) + 4*f(x3) + ... + 4*f(xn-1) + f(xn)]
-```
 
-Where h = (b-a)/n and coefficients follow pattern: 1, 4, 2, 4, 2, ..., 4, 1
+### Integral = (h/3) * [f(x0) + 4*f(x1) + 2*f(x2) + 4*f(x3) + ... + 4*f(xn-1) + f(xn)]
+
+
+Where h = (b-a)/n 
+
 
 **Algorithm Steps:**
 
 1. Divide interval [a,b] into even number of sub-intervals (n)
-2. Calculate step size h = (b-a)/n
-3. Calculate function values at all points xi = a + i\*h
-4. Apply Simpson's 1/3 formula:
-   - Add f(a) + f(b)
-   - Add 4 times sum of odd-indexed terms
-   - Add 2 times sum of even-indexed terms (except endpoints)
-   - Multiply total by h/3
+2. Calculate step size h=(b-a)/n
+3. Calculate function values at all points xi= a + i*h 
+4. Add f(a) + f(b)
+5. Add 4 times sum of odd-indexed terms
+6. Add 2 times sum of even-indexed terms
+7. Multiply total by h/3
 
 **Advantages:**
 
-- Higher accuracy than trapezoidal rule by capturing curvature better
-- Works well for smooth functions and widely used in engineering calculations
+- Higher accuracy than trapezoidal rule
+- Works well and widely used in calculation
 
 **Disadvantages:**
 
-- Requires even number of intervals and more complex than trapezoidal rule
-- May not work well for highly oscillating functions
+- Requires even number of intervals
+- Complex than trapezoidal rule
 
 ## Simpson's 1/3 Rule Code
 

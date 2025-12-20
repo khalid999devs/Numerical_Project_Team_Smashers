@@ -24,7 +24,7 @@ Where h = (b-a)/n and coefficients follow pattern: 1, 4, 2, 4, 2, ..., 4, 1
 
 1. Divide interval [a,b] into even number of sub-intervals (n)
 2. Calculate step size h = (b-a)/n
-3. Calculate function values at all points xi = a + i*h
+3. Calculate function values at all points xi = a + i\*h
 4. Apply Simpson's 1/3 formula:
    - Add f(a) + f(b)
    - Add 4 times sum of odd-indexed terms

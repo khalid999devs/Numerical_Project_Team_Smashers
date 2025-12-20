@@ -41,7 +41,7 @@ LU Decomposition is a numerical method that breaks a square matrix into the prod
 #include <bits/stdc++.h>
 using namespace std;
 
-int main() 
+int main()
 {
     ifstream fin("input.txt");
     ofstream fout("output.txt");
@@ -49,7 +49,7 @@ int main()
     int t;
     fin >> t;
 
-    for (int i = 1; i <= t; i++) 
+    for (int i = 1; i <= t; i++)
         {
         int n;
         fin >> n;
@@ -58,29 +58,29 @@ int main()
         vector<vector<double>> L(n, vector<double>(n, 0.0));
         vector<vector<double>> U(n, vector<double>(n, 0.0));
 
-        for (int i = 0; i < n; i++) 
+        for (int i = 0; i < n; i++)
         {
-            for (int j = 0; j < n; j++) 
+            for (int j = 0; j < n; j++)
             {
                 fin >> a[i][j];
             }
         }
 
         vector<double> b(n);
-        for (int i = 0; i < n; i++) 
+        for (int i = 0; i < n; i++)
         {
             fin >> b[i];
         }
 
-        for (int i = 0; i < n; i++) 
+        for (int i = 0; i < n; i++)
             {
-            for (int k = i; k < n; k++) 
+            for (int k = i; k < n; k++)
             {
                 double sum = 0;
                 for (int j = 0; j < i; j++) sum += L[i][j] * U[j][k];
                 U[i][k] = a[i][k] - sum;
             }
-            for (int k = i; k < n; k++) 
+            for (int k = i; k < n; k++)
             {
                 if (i == k) L[i][i] = 1;
                 else {
@@ -92,7 +92,7 @@ int main()
         }
 
         vector<double> y(n);
-        for (int i = 0; i < n; i++) 
+        for (int i = 0; i < n; i++)
         {
             double sum = 0;
             for (int j = 0; j < i; j++) sum += L[i][j] * y[j];
@@ -100,7 +100,7 @@ int main()
         }
 
         vector<double> x(n);
-        for (int i = n - 1; i >= 0; i--) 
+        for (int i = n - 1; i >= 0; i--)
         {
             double sum = 0;
             for (int j = i + 1; j < n; j++) sum += U[i][j] * x[j];

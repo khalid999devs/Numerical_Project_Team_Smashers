@@ -10,7 +10,6 @@ Newton's backward interpolation is a numerical method used to estimate function 
 - Uses backward difference table starting from last data point
 - Best suited for interpolation near the end of data set
 - Constructs interpolation polynomial using backward differences
-- Complementary method to forward interpolation
 
 **Algorithm Steps:**
 
@@ -29,8 +28,8 @@ Newton's backward interpolation is a numerical method used to estimate function 
 
 **Advantages:**
 
-- Excellent accuracy for points near end of data with systematic organized approach
-- Easy to implement for equally spaced data and widely used in numerical analysis
+- Excellent accuracy for points near end of data 
+- Easy to implement for equally spaced data 
 
 **Disadvantages:**
 

@@ -2,14 +2,14 @@
 
 ## Linear Regression Theory
 
-Linear Regression is a numerical method used to determine the best-fit straight line for a given set of data points. It establishes a linear relationship between an independent variable and a dependent variable using the least squares principle.
+Linear Regression is a numerical method to determine the best-fit straight line for a given set of data points. It establishes a linear relation between a dependent variable and an independent variable.
 
 ### Key Concepts:
 
 - Based on the Least Squares Method
 - Minimizes the sum of squared errors between observed and predicted values
-- Assumes a linear relationship of the form y = a + bx
-- Suitable when data follows an approximately straight-line trend
+- Assumes a linear relationship of form y = a + bx
+- Suitable when data follows an approximate straight-line trend
 
 ### Algorithm Steps:
 
@@ -31,13 +31,13 @@ Substitute values of a and b to obtain the regression equation
 
 ### Advantages:
 
-- Simple implementation requiring minimal computation with wide applicability
-- Widely used in engineering and data analysis for straightforward linear relationships
+- Simple implementation and simple computation 
+- Widely used for straightforward linear relations
 
 ### Disadvantages:
 
-- Only applicable to linear data patterns and sensitive to outliers
-- Cannot represent complex nonlinear relationships limiting versatility
+- Only applicable to linear data patterns 
+- Cannot represent non-linear relations
 
 ## Linear Regression Code
 

@@ -1,6 +1,6 @@
 # Numerical Methods Project - Team Smashers
 
-This is a Numerical Methods Laboratory Project based on the Numerical Lab of the 2nd year 2nd semester of Department of CSE of Khulna University of Engineering and Technology. This comprehensive collection features **19 numerical methods** across 7 major categories.
+This is a Numerical Methods Laboratory Project based on the Numerical Lab of the 2nd year 2nd semester of Department of CSE of Khulna University of Engineering and Technology. This Project is all about 19 different numerical methods which we have categorized into 7 different segments.
 
 ## Table of Contents
 

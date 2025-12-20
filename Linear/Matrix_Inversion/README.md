@@ -9,7 +9,6 @@ Matrix Inversion is a method used to find the inverse of a square matrix, which 
 - Only square and non-singular matrices can be inverted
 - A × A^(-1) = I (identity matrix)
 - If determinant is zero, matrix is singular and has no inverse
-- Commonly computed using Gauss-Jordan elimination
 - Useful for solving systems of equations: x = A^(-1) × b
 
 **Algorithm Steps:**
@@ -25,13 +24,13 @@ Matrix Inversion is a method used to find the inverse of a square matrix, which 
 
 **Advantages:**
 
-- Provides direct solution for systems of equations and useful in matrix algebra
+- Provides direct solution for systems of equations 
 - Once computed, can be reused for multiple problems with same coefficient matrix
 
 **Disadvantages:**
 
-- Computationally expensive O(n^3) operations and numerically unstable for ill-conditioned matrices
-- Not efficient for single system solution and sensitive to round-off errors
+- Computationally expensive O(n^3) operations 
+- Not efficient for single system solution 
 
 ## Matrix Inversion Code
 

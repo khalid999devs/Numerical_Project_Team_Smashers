@@ -4,8 +4,7 @@ This is a Numerical Methods Laboratory Project based on the Numerical Lab of the
 
 ## Table of Contents
 
-<a id="toc-solution-of-linear-equations"></a>
-## [Solution of Linear Equations](#solution-of-linear-equations)
+**[➔ Solution of Linear Equations](#solution-of-linear-equations)**
 
 - **[Gauss Elimination Method](#gauss-elimination-method)**
 
@@ -34,8 +33,7 @@ This is a Numerical Methods Laboratory Project based on the Numerical Lab of the
   - [Input](#matrix-inversion-input)
   - [Output](#matrix-inversion-output)
 
-<a id="toc-solution-of-non-linear-equations"></a>
-## [Solution of Non-Linear Equations](#solution-of-non-linear-equations)
+**[➔ Solution of Non-Linear Equations](#solution-of-non-linear-equations)**
 
 - **[Bi-section Method](#bi-section-method)**
 
@@ -64,8 +62,7 @@ This is a Numerical Methods Laboratory Project based on the Numerical Lab of the
   - [Input](#newton-raphson-input)
   - [Output](#newton-raphson-output)
 
-<a id="toc-interpolation-approximation"></a>
-## [Interpolation & Approximation](#interpolation--approximation)
+**[➔ Interpolation & Approximation](#interpolation--approximation)**
 
 - **[Newton's Forward Interpolation](#newtons-forward-interpolation)**
 
@@ -87,8 +84,7 @@ This is a Numerical Methods Laboratory Project based on the Numerical Lab of the
   - [Input](#divided-difference-input)
   - [Output](#divided-difference-output)
 
-<a id="toc-curve-fitting-regression"></a>
-## [Curve Fitting/Regression](#curve-fittingregression)
+**[➔ Curve Fitting/Regression](#curve-fittingregression)**
 
 - **[Linear Regression](#linear-regression)**
 
@@ -110,8 +106,7 @@ This is a Numerical Methods Laboratory Project based on the Numerical Lab of the
   - [Input](#transcendental-regression-input)
   - [Output](#transcendental-regression-output)
 
-<a id="toc-numerical-integration"></a>
-## [Numerical Integration](#numerical-integration)
+**[➔ Numerical Integration](#numerical-integration)**
 
 - **[Simpson's 1/3 Rule](#simpsons-13-rule)**
 
@@ -126,8 +121,7 @@ This is a Numerical Methods Laboratory Project based on the Numerical Lab of the
   - [Input](#simpsons-38-rule-input)
   - [Output](#simpsons-38-rule-output)
 
-<a id="toc-numerical-differentiation"></a>
-## [Numerical Differentiation](#numerical-differentiation)
+**[➔ Numerical Differentiation](#numerical-differentiation)**
 
 - **[Differentiation Using Forward Interpolation](#differentiation-using-forward-interpolation)**
 
@@ -142,8 +136,7 @@ This is a Numerical Methods Laboratory Project based on the Numerical Lab of the
   - [Input](#differentiation-using-backward-interpolation-input)
   - [Output](#differentiation-using-backward-interpolation-output)
 
-<a id="toc-solution-of-ordinary-differential-equations"></a>
-## [Solution of Ordinary Differential Equations](#solution-of-ordinary-differential-equations)
+**[➔ Solution of Ordinary Differential Equations](#solution-of-ordinary-differential-equations)**
 
 - **[Runge-Kutta Method](#runge-kutta-method)**
   - [Theory](#runge-kutta-theory)
@@ -312,7 +305,6 @@ Value of x2 = 1
 ```
 
 <a id="gauss-jordan-elimination-method"></a>
-
 # Gauss Jordan Elimination Method &nbsp;&nbsp;<sub>[⬆ Back to TOC](#table-of-contents)</sub>
 
 ## Gauss Jordan Theory
@@ -460,7 +452,6 @@ Value of x2 = -1
 ```
 
 <a id="lu-decomposition-method"></a>
-
 # LU Decomposition Method &nbsp;&nbsp;<sub>[⬆ Back to TOC](#table-of-contents)</sub>
 
 ## LU Decomposition Theory
@@ -644,7 +635,6 @@ Value of x2 = 2
 ```
 
 <a id="matrix-inversion-method"></a>
-
 # Matrix Inversion Method &nbsp;&nbsp;<sub>[⬆ Back to TOC](#table-of-contents)</sub>
 
 ## Matrix Inversion Theory
@@ -939,7 +929,6 @@ Function value at root: f(1.645264) = -0.000746
 ```
 
 <a id="false-position-method"></a>
-
 # False Position Method &nbsp;&nbsp;<sub>[⬆ Back to TOC](#table-of-contents)</sub>
 
 ## False Position Theory
@@ -1072,7 +1061,6 @@ Function value at root: f(1.646092) = -0.000155
 ```
 
 <a id="secant-method"></a>
-
 # Secant Method &nbsp;&nbsp;<sub>[⬆ Back to TOC](#table-of-contents)</sub>
 
 ## Secant Theory
@@ -1200,7 +1188,6 @@ Function value at root: f(1.645837) = 0.000202
 ```
 
 <a id="newton-raphson-method"></a>
-
 # Newton-Raphson Method &nbsp;&nbsp;<sub>[⬆ Back to TOC](#table-of-contents)</sub>
 
 ## Newton Raphson Theory
@@ -1621,7 +1608,6 @@ Interpolated values:
 ```
 
 <a id="newtons-backward-interpolation"></a>
-
 # Newton's Backward Interpolation &nbsp;&nbsp;<sub>[⬆ Back to TOC](#table-of-contents)</sub>
 
 ## Newton's Backward Interpolation Theory
@@ -1891,7 +1877,6 @@ Interpolated values:
 ---
 
 <a id="newtons-divided-difference-method"></a>
-
 # Newton's Divided Difference Method &nbsp;&nbsp;<sub>[⬆ Back to TOC](#table-of-contents)</sub>
 
 ## Divided Difference Theory
@@ -2254,7 +2239,6 @@ Model: y = 1.300000 + 0.900000x
 ```
 
 <a id="polynomial-regression"></a>
-
 # Polynomial Regression &nbsp;&nbsp;<sub>[⬆ Back to TOC](#table-of-contents)</sub>
 
 ## Polynomial Regression Theory
@@ -2386,7 +2370,6 @@ Fitted Polynomial:y = 0.000000 + 0.000000x^1 + 1.000000x^2
 ```
 
 <a id="transcendental-regression"></a>
-
 # Transcendental Regression &nbsp;&nbsp;<sub>[⬆ Back to TOC](#table-of-contents)</sub>
 
 ## Transcendental Regression Theory
@@ -2599,7 +2582,6 @@ Test Case 3: Value of integral = 0.463649
 ```
 
 <a id="simpsons-38-rule"></a>
-
 # Simpson's 3/8 Rule &nbsp;&nbsp;<sub>[⬆ Back to TOC](#table-of-contents)</sub>
 
 ## Simpson's 3/8 Rule Theory
@@ -2855,7 +2837,6 @@ Second derivative at x = 2.000000 : 2.000000
 ```
 
 <a id="differentiation-using-backward-interpolation"></a>
-
 # Differentiation Using Backward Interpolation &nbsp;&nbsp;<sub>[⬆ Back to TOC](#table-of-contents)</sub>
 
 ## Differentiation Using Backward Interpolation Theory

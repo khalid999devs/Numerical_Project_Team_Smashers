@@ -4,7 +4,7 @@ This is a Numerical Methods Laboratory Project based on the Numerical Lab of the
 
 ## Table of Contents
 
-### **[Solution of Linear Equations](#solution-of-linear-equations)**
+**<font size="5">[Solution of Linear Equations](#solution-of-linear-equations)</font>**
 
 - **[Gauss Elimination Method](#gauss-elimination-method)**
 
@@ -33,7 +33,7 @@ This is a Numerical Methods Laboratory Project based on the Numerical Lab of the
   - [Input](#matrix-inversion-input)
   - [Output](#matrix-inversion-output)
 
-### **[Solution of Non-Linear Equations](#solution-of-non-linear-equations)**
+**<font size="5">[Solution of Non-Linear Equations](#solution-of-non-linear-equations)</font>**
 
 - **[Bi-section Method](#bi-section-method)**
 
@@ -62,7 +62,7 @@ This is a Numerical Methods Laboratory Project based on the Numerical Lab of the
   - [Input](#newton-raphson-input)
   - [Output](#newton-raphson-output)
 
-### **[Interpolation & Approximation](#interpolation--approximation)**
+**<font size="5">[Interpolation & Approximation](#interpolation--approximation)</font>**
 
 - **[Newton's Forward Interpolation](#newtons-forward-interpolation)**
 
@@ -84,7 +84,7 @@ This is a Numerical Methods Laboratory Project based on the Numerical Lab of the
   - [Input](#divided-difference-input)
   - [Output](#divided-difference-output)
 
-### **[Curve Fitting/Regression](#curve-fittingregression)**
+**<font size="5">[Curve Fitting/Regression](#curve-fittingregression)</font>**
 
 - **[Linear Regression](#linear-regression)**
 
@@ -106,7 +106,7 @@ This is a Numerical Methods Laboratory Project based on the Numerical Lab of the
   - [Input](#transcendental-regression-input)
   - [Output](#transcendental-regression-output)
 
-### **[Numerical Integration](#numerical-integration)**
+**<font size="5">[Numerical Integration](#numerical-integration)</font>**
 
 - **[Simpson's 1/3 Rule](#simpsons-13-rule)**
 
@@ -121,7 +121,7 @@ This is a Numerical Methods Laboratory Project based on the Numerical Lab of the
   - [Input](#simpsons-38-rule-input)
   - [Output](#simpsons-38-rule-output)
 
-### **[Numerical Differentiation](#numerical-differentiation)**
+**<font size="5">[Numerical Differentiation](#numerical-differentiation)</font>**
 
 - **[Differentiation Using Forward Interpolation](#differentiation-using-forward-interpolation)**
 
@@ -136,7 +136,7 @@ This is a Numerical Methods Laboratory Project based on the Numerical Lab of the
   - [Input](#differentiation-using-backward-interpolation-input)
   - [Output](#differentiation-using-backward-interpolation-output)
 
-### **[Solution of Ordinary Differential Equations](#solution-of-ordinary-differential-equations)**
+**<font size="5">[Solution of Ordinary Differential Equations](#solution-of-ordinary-differential-equations)</font>**
 
 - **[Runge-Kutta Method](#runge-kutta-method)**
   - [Theory](#runge-kutta-theory)

@@ -2,33 +2,33 @@
 
 ## Transcendental Regression Theory
 
-Transcendental regression is used when the relationship between variables follows an exponential pattern. It is commonly applied in growth and decay processes.
+Transcendental regression is used when the relation follows an exponential pattern. It is generally applied in growth and decay processes.
 
 ### Key Concepts:
 
-- Used for exponential models of the form y = a e^(bx)
-- Nonlinear equation is converted into linear form using logarithms
+- Used for exponential models of form y = ae^(bx)
+- Nonlinear equation is converted into linear using logarithms
 - Based on least squares after transformation
-- Requires all y values to be positive
 
 ### Algorithm Steps:
 
-- Take natural logarithm on both sides of the equation
-- Convert equation to ln(y) = ln(a) + bx
-- Treat ln(y) as dependent variable and x as independent variable
+- Take logarithm on both sides of equation
+- Convert equation to ln(y)= ln(a) + bx
+- Treat ln(y) as dependent variable(Y) and x as independent variable
 - Apply linear regression to find coefficients
 - Calculate a by taking exponential of ln(a)
-- Substitute a and b into the original exponential equation
+- Substitute a and b into original equation
 
 ### Advantages:
 
-- Effectively models exponential growth or decay by converting nonlinear to linear form
-- Useful in population studies and engineering systems with exponential behavior
+- Effectively models exponential growth or decay 
+- Useful in studies and systems with exponential behavior
 
 ### Disadvantages:
 
-- Cannot handle zero or negative y values limiting data applicability
-- Logarithmic transformation may amplify errors and unsuitable for non-exponential data
+- Cannot handle zero or negative y values 
+- Logarithmic transformation may amplify errors
+- unsuitable for non-exponential data
 
 ## Transcendental Regression Code
 

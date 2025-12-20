@@ -22,15 +22,13 @@ Transcendental regression is used when the relationship between variables follow
 
 ### Advantages:
 
-- Effectively models exponential growth or decay
-- Converts nonlinear problems into linear form
-- Useful in population studies and engineering systems
+- Effectively models exponential growth or decay by converting nonlinear to linear form
+- Useful in population studies and engineering systems with exponential behavior
 
 ### Disadvantages:
 
-- Cannot handle zero or negative y values
-- Logarithmic transformation may amplify errors
-- Not suitable for non-exponential data
+- Cannot handle zero or negative y values limiting data applicability
+- Logarithmic transformation may amplify errors and unsuitable for non-exponential data
 
 ## Transcendental Regression Code
 

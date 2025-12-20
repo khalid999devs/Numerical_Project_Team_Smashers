@@ -2,7 +2,38 @@
 
 ## LU Decomposition Theory
 
-LU Decomposition is a numerical method used to solve systems of linear equations efficiently. It involves breaking a square matrix into two matrices: a lower triangular matrix and an upper triangular matrix. The lower triangular matrix contains elements below the main diagonal, while the upper triangular matrix contains elements on and above the main diagonal. Once the decomposition is done, the system is solved in two steps: first solving the lower triangular system to get an intermediate vector, then solving the upper triangular system to find the final solution. This method reduces computation time and is particularly useful when the same matrix is used with different right-hand side vectors. It is widely applied in engineering, computer simulations, and numerical analysis.
+LU Decomposition is a numerical method that breaks a square matrix into the product of a lower triangular matrix (L) and an upper triangular matrix (U) to efficiently solve systems of linear equations.
+
+**Key Concepts:**
+
+- Decomposes matrix A into A = L × U
+- L is lower triangular (elements below diagonal)
+- U is upper triangular (elements on and above diagonal)
+- Solves system in two stages: Ly = b, then Ux = y
+- Particularly efficient for multiple systems with same coefficient matrix
+
+**Algorithm Steps:**
+
+1. Initialize L as identity matrix and U as zero matrix
+2. Decomposition Process:
+   - For each row i:
+     - Calculate U[i][j] for j >= i using: U[i][j] = A[i][j] - sum(L[i][k] × U[k][j])
+     - Calculate L[j][i] for j > i using: L[j][i] = (A[j][i] - sum(L[j][k] × U[k][i])) / U[i][i]
+     - Set L[i][i] = 1
+3. Forward Substitution: Solve Ly = b for y
+   - y[i] = (b[i] - sum(L[i][j] × y[j])) / L[i][i]
+4. Back Substitution: Solve Ux = y for x
+   - x[i] = (y[i] - sum(U[i][j] × x[j])) / U[i][i]
+
+**Advantages:**
+
+- Very efficient when solving multiple systems with same coefficient matrix
+- Decomposition can be reused reducing computational complexity for repeated solutions
+
+**Disadvantages:**
+
+- Requires square non-singular matrix and may fail if pivot elements are zero
+- Not efficient for single system solution due to initial decomposition overhead
 
 ## LU Decomposition Code
 

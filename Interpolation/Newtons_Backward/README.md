@@ -2,7 +2,40 @@
 
 ## Newton's Backward Interpolation Theory
 
-Newton’s backward interpolation is a numerical method used to estimate the value of a function when the required value lies near the end of the given data set. It is applicable only when the x-values are equally spaced. The method uses a backward difference table, which is formed from the given data by computing successive differences starting from the last data point. Using these backward differences, an interpolation polynomial is constructed to approximate the function value. Newton’s backward interpolation is commonly used in numerical analysis when interpolation is needed close to the last known value and provides good accuracy under equal spacing conditions.
+Newton's backward interpolation is a numerical method used to estimate function values when the required point lies near the end of equally spaced data points.
+
+**Key Concepts:**
+
+- Requires equally spaced x-values
+- Uses backward difference table starting from last data point
+- Best suited for interpolation near the end of data set
+- Constructs interpolation polynomial using backward differences
+- Complementary method to forward interpolation
+
+**Algorithm Steps:**
+
+1. Verify that x-values are equally spaced with step size h
+2. Construct backward difference table:
+   - First column: y-values
+   - Calculate backward differences: ∇y[i] = y[i] - y[i-1]
+   - Continue with higher order backward differences
+3. For interpolation at point x near the end:
+   - Calculate s = (x - xn) / h (where xn is last point)
+   - Apply Newton's backward formula:
+     ```
+     P(x) = yn + s×∇yn + s(s+1)×∇²yn/2! + s(s+1)(s+2)×∇³yn/3! + ...
+     ```
+4. Use appropriate number of terms for desired accuracy
+
+**Advantages:**
+
+- Excellent accuracy for points near end of data with systematic organized approach
+- Easy to implement for equally spaced data and widely used in numerical analysis
+
+**Disadvantages:**
+
+- Limited to equally spaced data points and less accurate for points far from end
+- Backward differences may amplify errors and not suitable for sparse data
 
 ## Newton's Backward Interpolation Code
 

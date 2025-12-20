@@ -25,14 +25,13 @@ The False Position Method (also known as Regula Falsi Method or Method of Chords
 
 **Advantages:**
 
-- Always converges (unlike secant method)
-- Generally faster than bisection
-- Simple to implement
+- Always converges unlike secant method and generally faster than bisection
+- Simple to implement with guaranteed bracketing of root
 
 **Disadvantages:**
 
 - Can be slower than Newton-Raphson in some cases
-- One endpoint may remain fixed for many iterations
+- One endpoint may remain fixed for many iterations causing slow convergence
 
 ## False Position Code
 

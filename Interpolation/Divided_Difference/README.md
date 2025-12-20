@@ -2,7 +2,38 @@
 
 ## Divided Difference Theory
 
-Divided difference is an interpolation method used to estimate function values from given data points when the x-values are not equally spaced. It organizes the data into a divided difference table, where each column represents successive changes in the function values. The interpolation polynomial is built step by step using the top row of this table. The method is flexible, efficient for adding new data points, and widely used in numerical analysis.
+Divided difference is a flexible interpolation method used to estimate function values from given data points when the x-values are not equally spaced.
+
+**Key Concepts:**
+
+- Works with unequally spaced data points
+- Uses divided difference table instead of regular difference table
+- Each column represents successive divided differences
+- Interpolation polynomial built using top row of table
+- More flexible than Newton's forward/backward methods
+
+**Algorithm Steps:**
+
+1. Arrange data points (x0,y0), (x1,y1), ..., (xn,yn)
+2. Construct divided difference table:
+   - First column: f[xi] = yi (function values)
+   - Second column: f[xi,xi+1] = (f[xi+1] - f[xi]) / (xi+1 - xi)
+   - Continue: f[xi,...,xi+k] = (f[xi+1,...,xi+k] - f[xi,...,xi+k-1]) / (xi+k - xi)
+3. Build interpolation polynomial:
+   ```
+   P(x) = f[x0] + f[x0,x1](x-x0) + f[x0,x1,x2](x-x0)(x-x1) + ...
+   ```
+4. Evaluate polynomial at desired interpolation point
+
+**Advantages:**
+
+- Handles unequally spaced data points with no spacing restrictions on x-values
+- Flexible and efficient for adding new data points with easy implementation
+
+**Disadvantages:**
+
+- More complex calculations than equal-spacing methods with potential numerical precision issues
+- Divided differences can become large for widely spaced points affecting stability
 
 ## Divided Difference Code
 

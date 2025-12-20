@@ -36,16 +36,13 @@ y(next) = y + (k1 + 2*k2 + 2*k3 + k4) / 6
 
 **Advantages:**
 
-- High accuracy with reasonable computational cost
-- No need for derivative calculations
-- Self-starting method (only needs initial condition)
-- Widely applicable to various types of ODEs
+- High accuracy with reasonable computational cost and no derivative calculations needed
+- Self-starting method requiring only initial condition with wide applicability
 
 **Disadvantages:**
 
-- Requires four function evaluations per step
+- Requires four function evaluations per step increasing computational load
 - Fixed step size may not be optimal for all problems
-- More complex than simpler methods like Euler's
 
 **When to Use:**
 

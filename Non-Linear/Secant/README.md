@@ -26,15 +26,13 @@ x(n+1) = x(n) - f(x(n)) × (x(n) - x(n-1)) / (f(x(n)) - f(x(n-1)))
 
 **Advantages:**
 
-- Faster convergence than bisection and false position
-- No need to calculate derivatives
-- Super-linear convergence (order ~ 1.618)
+- Faster super-linear convergence than bisection and false position methods
+- No need to calculate derivatives, only requires function evaluations
 
 **Disadvantages:**
 
-- Convergence is not guaranteed
-- May diverge if initial guesses are poor
-- Requires two initial values
+- Convergence not guaranteed and may diverge with poor initial guesses
+- Requires two initial values unlike Newton-Raphson method
 
 **Comparison with Newton-Raphson:**
 

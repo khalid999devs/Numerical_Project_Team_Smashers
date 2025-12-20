@@ -2,7 +2,36 @@
 
 ## Matrix Inversion Theory
 
-Matrix Inversion is a method used to find a matrix that, when multiplied with the original matrix, produces the identity matrix. Only square and non-singular matrices can be inverted. The inverse of a matrix is useful for solving systems of linear equations, as it allows the solution to be expressed directly in terms of the inverse and the constants vector. Various numerical methods, such as Gauss-Jordan elimination or LU decomposition, can be used to compute the inverse. If a matrix is singular (its determinant is zero), it does not have an inverse. Matrix inversion is widely applied in engineering, computer simulations, and numerical analysis.
+Matrix Inversion is a method used to find the inverse of a square matrix, which when multiplied with the original matrix produces the identity matrix.
+
+**Key Concepts:**
+
+- Only square and non-singular matrices can be inverted
+- A × A^(-1) = I (identity matrix)
+- If determinant is zero, matrix is singular and has no inverse
+- Commonly computed using Gauss-Jordan elimination
+- Useful for solving systems of equations: x = A^(-1) × b
+
+**Algorithm Steps:**
+
+1. Start with augmented matrix [A | I] where I is identity matrix
+2. Apply Gauss-Jordan elimination:
+   - For each pivot row i:
+     - Divide row i by pivot element to make a[i][i] = 1
+     - Eliminate all other elements in column i (make them zero)
+     - Apply same operations to both sides of augmented matrix
+3. When left side becomes identity matrix, right side becomes A^(-1)
+4. Check for singularity (if pivot becomes zero, matrix is singular)
+
+**Advantages:**
+
+- Provides direct solution for systems of equations and useful in matrix algebra
+- Once computed, can be reused for multiple problems with same coefficient matrix
+
+**Disadvantages:**
+
+- Computationally expensive O(n^3) operations and numerically unstable for ill-conditioned matrices
+- Not efficient for single system solution and sensitive to round-off errors
 
 ## Matrix Inversion Code
 

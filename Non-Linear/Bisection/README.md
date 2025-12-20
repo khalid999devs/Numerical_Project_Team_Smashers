@@ -21,14 +21,13 @@ The Bisection Method is one of the simplest and most reliable methods for findin
 
 **Advantages:**
 
-- Always converges if initial assumptions are met
-- Simple to implement
-- No need for derivatives
+- Always converges if initial assumptions are met and simple to implement
+- No need for derivatives or complex calculations
 
 **Disadvantages:**
 
-- Slow convergence compared to other methods
-- Cannot detect multiple roots
+- Slower convergence compared to other root-finding methods
+- Cannot detect multiple roots in the same interval
 
 ## Bisection Code
 

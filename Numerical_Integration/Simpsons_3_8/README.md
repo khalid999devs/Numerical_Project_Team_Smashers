@@ -21,15 +21,13 @@ Where coefficients follow the pattern: 1, 3, 3, 2, 3, 3, 2, ..., 3, 3, 1
 
 **Advantages:**
 
-- Good accuracy for smooth functions
-- Can handle curves with higher degree of variation
-- Useful when n is a multiple of 3
+- Good accuracy for smooth functions and can handle curves with higher variation
+- Useful alternative when number of intervals is multiple of 3
 
 **Disadvantages:**
 
-- Requires specific number of intervals (multiple of 3)
-- More complex than trapezoidal rule
-- Slightly more computations than Simpson's 1/3
+- Requires specific number of intervals (multiple of 3) limiting flexibility
+- More complex than trapezoidal rule with slightly higher computational cost
 
 ## Simpson's 3/8 Rule Code
 

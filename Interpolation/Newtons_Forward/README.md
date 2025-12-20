@@ -2,7 +2,40 @@
 
 ## Newton's Forward Interpolation Theory
 
-Newton’s forward interpolation is a numerical method used to estimate the value of a function when the required value lies near the beginning of the given data set. It requires equally spaced x-values. The method uses a forward difference table, where successive differences are calculated starting from the first data point. Using these forward differences, an interpolation polynomial is constructed step by step to approximate the function value. Newton’s forward interpolation is widely used in numerical analysis for points near the start of the data set and provides accurate results for equally spaced data.
+Newton's forward interpolation is a numerical method used to estimate function values when the required point lies near the beginning of equally spaced data points.
+
+**Key Concepts:**
+
+- Requires equally spaced x-values
+- Uses forward difference table starting from first data point
+- Best suited for interpolation near the beginning of data set
+- Constructs interpolation polynomial step by step
+- Based on finite difference approximation
+
+**Algorithm Steps:**
+
+1. Verify that x-values are equally spaced with step size h
+2. Construct forward difference table:
+   - First column: y-values (Δ^0y)
+   - Second column: First differences (Δy[i] = y[i+1] - y[i])
+   - Continue calculating higher order differences
+3. For interpolation at point x:
+   - Calculate s = (x - x0) / h
+   - Apply Newton's forward formula:
+     ```
+     P(x) = y0 + s×Δy0 + s(s-1)×Δ²y0/2! + s(s-1)(s-2)×Δ³y0/3! + ...
+     ```
+4. Use appropriate number of terms based on required accuracy
+
+**Advantages:**
+
+- Simple systematic approach with good accuracy for points near beginning of data
+- Easy to implement and widely used in numerical analysis
+
+**Disadvantages:**
+
+- Limited to equally spaced data and less accurate for points far from starting point
+- Forward differences may accumulate errors for large datasets
 
 ## Newton's Forward Interpolation Code
 

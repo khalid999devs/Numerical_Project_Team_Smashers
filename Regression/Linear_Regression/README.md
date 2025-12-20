@@ -31,15 +31,13 @@ Substitute values of a and b to obtain the regression equation
 
 ### Advantages:
 
-- Simple and easy to implement
-- Requires less computation
-- Widely used in engineering and data analysis
+- Simple implementation requiring minimal computation with wide applicability
+- Widely used in engineering and data analysis for straightforward linear relationships
 
 ### Disadvantages:
 
-- Applicable only to linear data
-- Sensitive to outliers
-- Cannot represent complex nonlinear relationships
+- Only applicable to linear data patterns and sensitive to outliers
+- Cannot represent complex nonlinear relationships limiting versatility
 
 ## Linear Regression Code
 

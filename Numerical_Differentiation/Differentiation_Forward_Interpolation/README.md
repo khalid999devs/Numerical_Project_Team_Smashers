@@ -2,7 +2,37 @@
 
 ## Differentiation Using Forward Interpolation Theory
 
-Forward interpolation estimates the value of a function at points near the beginning of a tabulated set of data. When applied to differentiation, it uses the values of the function at equally spaced points to approximate derivatives. Essentially, it constructs a forward difference table and expresses the derivative in terms of these differences, allowing you to calculate the slope (first derivative) or curvature (higher derivatives) without knowing the explicit function formula.It’s especially useful when data is tabulated and evenly spaced, and the point of interest is near the start of the table.
+Forward interpolation differentiation is a numerical method used to approximate derivatives when function values are available at equally spaced points near the beginning of the data set.
+
+**Key Concepts:**
+
+- Uses forward difference table to calculate derivatives
+- Suitable for points near the beginning of tabulated data
+- Requires equally spaced data points
+- Approximates derivatives without explicit function formula
+- Based on finite difference approximation of derivatives
+
+**Algorithm Steps:**
+
+1. Verify data points are equally spaced with step size h
+2. Construct forward difference table:
+   - Calculate successive forward differences: Δ^k f
+   - Build difference table up to required order
+3. Apply differentiation formulas:
+   - First derivative: f'(x0) = (Δf0 - Δ²f0/2 + Δ³f0/3 - ...) / h
+   - Higher derivatives use corresponding formulas
+4. Calculate derivative at desired point using appropriate formula
+5. Use sufficient terms for required accuracy
+
+**Advantages:**
+
+- No explicit function formula needed and works well for equally spaced tabulated data
+- Systematic approach using difference tables with wide applicability
+
+**Disadvantages:**
+
+- Limited to equally spaced data and accuracy decreases with higher order derivatives
+- Forward differences may accumulate errors and sensitive to data noise
 
 ## Differentiation Using Forward Interpolation Code
 

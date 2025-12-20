@@ -35,16 +35,13 @@ Draw a tangent line to f(x) at point x(n). The point where this tangent crosses 
 
 **Advantages:**
 
-- Very fast convergence (quadratic) when near the root
-- Can identify repeated roots
-- Works well for most smooth functions
+- Very fast quadratic convergence when near the root
+- Works well for most smooth functions and can identify repeated roots
 
 **Disadvantages:**
 
-- Requires derivative calculation
-- May diverge if f'(x) = 0 or initial guess is poor
-- No guaranteed convergence
-- Can oscillate between points
+- Requires derivative calculation and may diverge if f'(x) = 0
+- No guaranteed convergence and sensitive to initial guess quality
 
 **When to Use:**
 

@@ -22,15 +22,13 @@ Polynomial regression is a curve fitting technique used when the relationship be
 
 ### Advantages:
 
-- Can model complex nonlinear trends
-- More flexible than linear regression
-- Provides accurate approximation within data range
+- Can model complex nonlinear trends with more flexibility than linear regression
+- Provides accurate approximation within the given data range
 
 ### Disadvantages:
 
-- Higher degree may cause overfitting
-- Computationally expensive
-- Poor extrapolation outside the data range
+- Higher degree polynomials may cause overfitting and are computationally expensive
+- Poor extrapolation outside data range with potential numerical instability
 
 ## Polynomial Regression Code
 

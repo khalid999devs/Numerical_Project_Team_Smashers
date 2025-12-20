@@ -2,7 +2,37 @@
 
 ## Differentiation Using Backward Interpolation Theory
 
-Backward interpolation estimates the value of a function at points near the end of a tabulated data set. For differentiation, it uses the function values at equally spaced points to approximate derivatives. A backward difference table is constructed, and derivatives are expressed in terms of these backward differences.It is most useful when data is equally spaced and the point of interest is near the last entries of the table.This is essentially the reverse approach of forward interpolation, suitable for end-of-table calculations.
+Backward interpolation differentiation is a numerical method used to approximate derivatives when function values are available at equally spaced points near the end of the data set.
+
+**Key Concepts:**
+
+- Uses backward difference table to calculate derivatives
+- Suitable for points near the end of tabulated data
+- Requires equally spaced data points
+- Complementary method to forward interpolation differentiation
+- Based on finite difference approximation using backward differences
+
+**Algorithm Steps:**
+
+1. Verify data points are equally spaced with step size h
+2. Construct backward difference table:
+   - Calculate successive backward differences: ∇^k f
+   - Build difference table up to required order
+3. Apply backward differentiation formulas:
+   - First derivative: f'(xn) = (∇fn + ∇²fn/2 + ∇³fn/3 + ...) / h
+   - Higher derivatives use corresponding backward formulas
+4. Calculate derivative at desired point using appropriate formula
+5. Use sufficient terms for required accuracy
+
+**Advantages:**
+
+- Excellent for derivatives near end of data set without explicit function formula
+- Systematic approach using backward differences with good tabulated data analysis
+
+**Disadvantages:**
+
+- Limited to equally spaced data and accuracy decreases with higher order derivatives
+- Backward differences may amplify errors and sensitive to data noise
 
 ## Differentiation Using Backward Interpolation Code
 

@@ -2,7 +2,44 @@
 
 ## Simpson's 1/3 Rule Theory
 
-Simpson’s 1/3 rule is a numerical integration method used to approximate the area under a curve (definite integral) when the function is known at discrete points. It divides the interval into an even number of sub-intervals and approximates the function using parabolas instead of straight lines.This method is more accurate than the trapezoidal rule because it captures the curve’s shape better. It works best when the function is smooth and the points are equally spaced.It’s widely used in numerical analysis when the exact integral is difficult or impossible to calculate.
+Simpson's 1/3 rule is a numerical integration method used to approximate definite integrals by dividing the interval into an even number of sub-intervals and using parabolic approximation.
+
+**Key Concepts:**
+
+- Divides interval into even number of sub-intervals (n must be even)
+- Approximates function using parabolas instead of straight lines
+- More accurate than trapezoidal rule
+- Based on fitting parabolas through three consecutive points
+- Uses weighted average with coefficients 1, 4, 2, 4, 2, ..., 4, 1
+
+**Formula:**
+
+```
+Integral = (h/3) * [f(x0) + 4*f(x1) + 2*f(x2) + 4*f(x3) + ... + 4*f(xn-1) + f(xn)]
+```
+
+Where h = (b-a)/n and coefficients follow pattern: 1, 4, 2, 4, 2, ..., 4, 1
+
+**Algorithm Steps:**
+
+1. Divide interval [a,b] into even number of sub-intervals (n)
+2. Calculate step size h = (b-a)/n
+3. Calculate function values at all points xi = a + i*h
+4. Apply Simpson's 1/3 formula:
+   - Add f(a) + f(b)
+   - Add 4 times sum of odd-indexed terms
+   - Add 2 times sum of even-indexed terms (except endpoints)
+   - Multiply total by h/3
+
+**Advantages:**
+
+- Higher accuracy than trapezoidal rule by capturing curvature better
+- Works well for smooth functions and widely used in engineering calculations
+
+**Disadvantages:**
+
+- Requires even number of intervals and more complex than trapezoidal rule
+- May not work well for highly oscillating functions
 
 ## Simpson's 1/3 Rule Code
 

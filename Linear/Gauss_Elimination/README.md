@@ -2,7 +2,36 @@
 
 ## Gauss Elimination Theory
 
-Gauss Elimination is a numerical technique used to solve a system of linear equations. The method works by systematically eliminating variables to transform the given system into an upper triangular form, where each equation contains fewer unknowns than the previous one. This simplification makes the system easy to solve.The process is carried out in two main stages. In the first stage, called forward elimination, elementary row operations are applied to eliminate the coefficients of variables below the main diagonal. In the second stage, known as back substitution, the values of the unknowns are determined starting from the last equation and moving upward.Gauss Elimination is widely used because it is simple, efficient for small to medium-sized systems, and forms the basis of many advanced numerical methods. It is commonly applied in engineering and scientific computations where systems of linear equations arise.
+Gauss Elimination is a numerical technique used to solve a system of linear equations by systematically eliminating variables to transform the system into an upper triangular form.
+
+**Key Concepts:**
+
+- Transforms augmented matrix into upper triangular form
+- Uses elementary row operations
+- Two main stages: forward elimination and back substitution
+- Suitable for systems with unique solutions
+
+**Algorithm Steps:**
+
+1. Form the augmented matrix [A|B] from the system of equations
+2. Forward Elimination: For each pivot element
+   - Make all elements below the pivot zero using row operations
+   - Calculate ratio = a[j][i] / a[i][i]
+   - Perform row operation: row[j] = row[j] - ratio × row[i]
+3. Back Substitution: Starting from last equation
+   - Calculate x[n-1] directly from last row
+   - Substitute known values to find remaining variables working upward
+   - Calculate each x[i] = (a[i][n] - sum) / a[i][i]
+
+**Advantages:**
+
+- Simple implementation and forms the foundation of advanced numerical methods
+- Efficient for small to medium systems with reliable convergence
+
+**Disadvantages:**
+
+- Computationally expensive for large systems and sensitive to round-off errors
+- May fail if pivot elements become zero during elimination
 
 ## Gauss Elimination Code
 

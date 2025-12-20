@@ -2,7 +2,35 @@
 
 ## Gauss Jordan Theory
 
-Gauss–Jordan Elimination is a numerical method used to solve a system of linear equations by transforming the augmented matrix of the system into reduced row-echelon form. Unlike Gauss Elimination, this method eliminates variables both below and above the main diagonal, resulting in a diagonal matrix.The procedure involves applying elementary row operations to make each pivot element equal to one and to make all other elements in the pivot column equal to zero. Once this form is achieved, the solution of the system can be read directly without the need for back substitution Gauss–Jordan Elimination is straightforward and systematic, making it easy to implement and understand. It is especially useful in numerical methods laboratories and in finding matrix inverses, although it requires more computations compared to Gauss Elimination.
+Gauss-Jordan Elimination is a numerical method used to solve a system of linear equations by transforming the augmented matrix into reduced row-echelon form (diagonal form).
+
+**Key Concepts:**
+
+- Transforms matrix into reduced row-echelon form (diagonal matrix)
+- Eliminates variables both below and above the main diagonal
+- Each pivot element is made equal to one
+- Solution can be read directly without back substitution
+
+**Algorithm Steps:**
+
+1. Form the augmented matrix [A|B] from the system
+2. For each pivot element a[i][i]:
+   - Divide the entire pivot row by a[i][i] to make pivot = 1
+   - Eliminate all other elements in the pivot column (both above and below)
+   - For each row j (where j ≠ i):
+     - Calculate ratio = a[j][i]
+     - Perform row[j] = row[j] - ratio × row[i]
+3. After complete elimination, read solution directly from last column
+
+**Advantages:**
+
+- No back substitution required with solution directly readable from matrix
+- Straightforward systematic approach useful for finding matrix inverses
+
+**Disadvantages:**
+
+- Requires more computations than Gauss Elimination and less efficient for large systems
+- More prone to round-off errors with higher computational cost
 
 ## Gauss Jordan Code
 

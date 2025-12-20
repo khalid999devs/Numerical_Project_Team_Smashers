@@ -2,19 +2,17 @@
 
 ## Runge Kutta Theory
 
-The Runge-Kutta Method is one of the most powerful and widely-used numerical techniques for solving ordinary differential equations (ODEs). The 4th order Runge-Kutta method provides a good balance between accuracy and computational efficiency.
+The Runge-Kutta Method is one of the most powerful and widely-used numerical techniques for solving ordinary differential equations (ODEs). The 4th order Runge-Kutta method provides computational efficiency.
 
 **Key Concepts:**
 
 - Used to solve first-order differential equations of the form dy/dx = f(x, y)
 - Does not require calculation of higher-order derivatives
-- Fourth-order method means error is proportional to h^5
-- More accurate than Euler's method while still being relatively simple
+- More accurate than Euler's method 
 
 **Formula:**
 
 The method calculates four slopes at different points within the interval and takes their weighted average:
-
 ```
 k1 = h * f(x, y)
 k2 = h * f(x + h/2, y + k1/2)
@@ -23,7 +21,6 @@ k4 = h * f(x + h, y + k3)
 
 y(next) = y + (k1 + 2*k2 + 2*k3 + k4) / 6
 ```
-
 **Algorithm Steps:**
 
 1. Start with initial values x0 and y0
@@ -36,8 +33,8 @@ y(next) = y + (k1 + 2*k2 + 2*k3 + k4) / 6
 
 **Advantages:**
 
-- High accuracy with reasonable computational cost and no derivative calculations needed
-- Self-starting method requiring only initial condition with wide applicability
+- High accuracy with reasonable computational cost
+- No derivative calculations needed
 
 **Disadvantages:**
 
@@ -48,7 +45,6 @@ y(next) = y + (k1 + 2*k2 + 2*k3 + k4) / 6
 
 - When high accuracy is needed for ODEs
 - When function derivatives are difficult to compute
-- For initial value problems in engineering and physics
 
 ## Runge Kutta Code
 

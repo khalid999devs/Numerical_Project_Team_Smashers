@@ -332,8 +332,9 @@ Gauss-Jordan Elimination is a numerical method used to solve a system of linear 
 
 **Disadvantages:**
 
-- Requires more computations than Gauss Elimination
+- Requires more computations than Gauss Elimination 
 - Less efficient for large systems
+  
 
 ## Gauss Jordan Code
 
@@ -477,7 +478,7 @@ LU Decomposition is a numerical method that breaks a square matrix into the prod
 **Advantages:**
 
 - Very efficient when solving multiple systems with same coefficient matrix
-- Decomposition can be reused for reducing computational complexity
+- Decomposition can be reused for reducing computational complexity 
 
 **Disadvantages:**
 
@@ -656,7 +657,7 @@ Matrix Inversion is a method used to find the inverse of a square matrix, which 
 
 **Advantages:**
 
-- Provides direct solution for systems of equations
+- Provides direct solution for systems of equations 
 - Once computed, can be reused for multiple problems with same coefficient matrix
 
 **Disadvantages:**
@@ -1084,7 +1085,7 @@ x(n+1) = x(n) - f(x(n)) × (x(n) - x(n-1)) / (f(x(n)) - f(x(n-1)))
 
 **Disadvantages:**
 
-- Convergence not guaranteed and may diverge with poor initial guesses
+- Convergence not guaranteed
 - Requires two initial values unlike Newton-Raphson method
 
 ## Secant Code
@@ -1217,13 +1218,7 @@ Where:
 **Disadvantages:**
 
 - Requires derivative calculation and may diverge if f'(x) = 0
-- Sensitive to initial guess quality
-
-## Newton Raphson Code
-
-- When derivative is easy to compute
-- When a good initial guess is available
-- When fast convergence is needed
+- No guaranteed convergence
 
 ## Newton Raphson Code
 
@@ -1601,9 +1596,7 @@ Interpolated values:
   P(6) = 19.5
 ```
 
----
-
-## Newton's Backward Interpolation
+# Newton's Backward Interpolation
 
 ## Newton's Backward Interpolation Theory
 
@@ -1633,8 +1626,8 @@ Newton's backward interpolation is a numerical method used to estimate function 
 
 **Advantages:**
 
-- Excellent accuracy for points near end of data
-- Easy to implement for equally spaced data
+- Excellent accuracy for points near end of data 
+- Easy to implement for equally spaced data 
 
 **Disadvantages:**
 
@@ -1871,11 +1864,7 @@ Interpolated values:
 
 ---
 
-## Divided Difference
-
----
-
-## Divided Difference
+# Newton's Divided Difference Method
 
 ## Divided Difference Theory
 
@@ -1908,7 +1897,7 @@ Divided difference is a flexible interpolation method used to estimate function 
 **Disadvantages:**
 
 - More complex calculations than equal-spacing methods
-- Divided differences can become large for widely spaced points
+- Divided differences can become large for widely spaced points 
 
 ## Divided Difference Code
 
@@ -2130,9 +2119,9 @@ Interpolated values:
 
 ---
 
-# Regression
+# Curve Fitting/Regression
 
-## Linear Regression
+# Linear Regression
 
 ## Linear Regression Theory
 
@@ -2234,9 +2223,7 @@ b = 0.900000
 Model: y = 1.300000 + 0.900000x
 ```
 
----
-
-## Polynomial Regression
+# Polynomial Regression
 
 ## Polynomial Regression Theory
 
@@ -2273,30 +2260,28 @@ Polynomial regression is a curve fitting technique used when the relation is non
 #include <bits/stdc++.h>
 using namespace std;
 
+vector<double> solveGaussian(vector<vector<double>> A, vector<double> B) {
+    int n = A.size();
 
-vector<double>solveGaussian(vector<vector<double>>A,vector<double>B){
-    int n=A.size();
-
-    for(int i=0;i<n;i++)
+    for (int i = 0; i < n; i++)
         A[i].push_back(B[i]);
 
-    for(int i=0;i<n;i++){
-        double pivot=A[i][i];
-        for(int j=0;j<=n;j++) A[i][j] /= pivot;
+    for (int i = 0; i < n; i++) {
+        double pivot = A[i][i];
+        for (int j = 0; j <= n; j++)
+            A[i][j] /= pivot;
 
-
-        for(int k = 0; k < n; k++){
-            if(k == i) continue;
-            double factor= A[k][i];
-            for(int j=0;j<=n;j++)
-                A[k][j] -= factor*A[i][j];
+        for (int k = 0; k < n; k++) {
+            if (k == i) continue;
+            double factor = A[k][i];
+            for (int j = 0; j <= n; j++)
+                A[k][j] -= factor * A[i][j];
         }
     }
 
-
-    vector<double>x(n);
-    for(int i=0;i<n;i++)
-        x[i]=A[i][n];
+    vector<double> x(n);
+    for (int i = 0; i < n; i++)
+        x[i] = A[i][n];
 
     return x;
 }
@@ -2368,9 +2353,7 @@ int main() {
 Fitted Polynomial:y = 0.000000 + 0.000000x^1 + 1.000000x^2
 ```
 
----
-
-## Transcendental Regression
+# Transcendental Regression
 
 ## Transcendental Regression Theory
 
@@ -2471,7 +2454,7 @@ Model: y = 1.000008 * e^(0.999998x)
 
 # Numerical Integration
 
-## Simpson's 1/3 Rule
+# Simpson's 1/3 Rule
 
 ## Simpson's 1/3 Rule Theory
 
@@ -2579,9 +2562,7 @@ Test Case 3: Value of integral = 0.463649
 
 ```
 
----
-
-## Simpson's 3/8 Rule
+# Simpson's 3/8 Rule
 
 ## Simpson's 3/8 Rule Theory
 
@@ -2691,7 +2672,7 @@ Test Case 3: Value of integral = 0.0993483
 
 # Numerical Differentiation
 
-## Differentiation Using Forward Interpolation
+# Differentiation Using Forward Interpolation
 
 ## Differentiation Using Forward Interpolation Theory
 
@@ -2833,9 +2814,7 @@ Second derivative at x = 2.000000 : 2.000000
 
 ```
 
----
-
-## Differentiation Using Backward Interpolation
+# Differentiation Using Backward Interpolation
 
 ## Differentiation Using Backward Interpolation Theory
 
@@ -2862,8 +2841,8 @@ Backward interpolation differentiation is a numerical method used to approximate
 
 **Advantages:**
 
-- Excellent for derivatives near end of data set
-- Systematic approach
+- Excellent for derivatives near end of data set 
+- Systematic approach  
 
 **Disadvantages:**
 
@@ -2979,9 +2958,9 @@ Second derivative at x = 8.000000 : 2.000000
 
 ---
 
-# Differential Equations
+# Solution of Ordinary Differential Equations
 
-## Runge Kutta
+# Runge-Kutta Method
 
 ## Runge Kutta Theory
 

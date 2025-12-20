@@ -148,7 +148,7 @@ This is a Numerical Methods Laboratory Project based on the Numerical Lab of the
 
 # Solution of Linear Equations
 
-# Gauss Elimination Method
+# Gauss Elimination Method [⬆ Back to TOC](#table-of-contents)
 
 ## Gauss Elimination Theory
 
@@ -302,7 +302,7 @@ Value of x1 = 1
 Value of x2 = 1
 ```
 
-# Gauss Jordan Elimination Method
+# Gauss Jordan Elimination Method [⬆ Back to TOC](#table-of-contents)
 
 ## Gauss Jordan Theory
 
@@ -332,9 +332,8 @@ Gauss-Jordan Elimination is a numerical method used to solve a system of linear 
 
 **Disadvantages:**
 
-- Requires more computations than Gauss Elimination 
+- Requires more computations than Gauss Elimination
 - Less efficient for large systems
-  
 
 ## Gauss Jordan Code
 
@@ -449,7 +448,7 @@ Value of x2 = -1
 
 ```
 
-# LU Decomposition Method
+# LU Decomposition Method [⬆ Back to TOC](#table-of-contents)
 
 ## LU Decomposition Theory
 
@@ -478,7 +477,7 @@ LU Decomposition is a numerical method that breaks a square matrix into the prod
 **Advantages:**
 
 - Very efficient when solving multiple systems with same coefficient matrix
-- Decomposition can be reused for reducing computational complexity 
+- Decomposition can be reused for reducing computational complexity
 
 **Disadvantages:**
 
@@ -631,7 +630,7 @@ Value of x2 = 2
 
 ```
 
-# Matrix Inversion Method
+# Matrix Inversion Method [⬆ Back to TOC](#table-of-contents)
 
 ## Matrix Inversion Theory
 
@@ -657,7 +656,7 @@ Matrix Inversion is a method used to find the inverse of a square matrix, which 
 
 **Advantages:**
 
-- Provides direct solution for systems of equations 
+- Provides direct solution for systems of equations
 - Once computed, can be reused for multiple problems with same coefficient matrix
 
 **Disadvantages:**
@@ -801,7 +800,7 @@ Matrix is singular and cannot be inverted.
 
 # Solution of Non-Linear Equations
 
-# Bi-section Method
+# Bi-section Method [⬆ Back to TOC](#table-of-contents)
 
 ## Bisection Theory
 
@@ -922,7 +921,7 @@ Root found at x = 1.645264
 Function value at root: f(1.645264) = -0.000746
 ```
 
-# False Position Method
+# False Position Method [⬆ Back to TOC](#table-of-contents)
 
 ## False Position Theory
 
@@ -1053,7 +1052,7 @@ Root found at x = 1.646092
 Function value at root: f(1.646092) = -0.000155
 ```
 
-# Secant Method
+# Secant Method [⬆ Back to TOC](#table-of-contents)
 
 ## Secant Theory
 
@@ -1179,7 +1178,7 @@ Root found at x = 1.645837
 Function value at root: f(1.645837) = 0.000202
 ```
 
-# Newton-Raphson Method
+# Newton-Raphson Method [⬆ Back to TOC](#table-of-contents)
 
 ## Newton Raphson Theory
 
@@ -1318,7 +1317,7 @@ Function value at root: f(1.582884) = 0.000001
 
 # Interpolation & Approximation
 
-# Newton's Forward Interpolation
+# Newton's Forward Interpolation [⬆ Back to TOC](#table-of-contents)
 
 ## Newton's Forward Interpolation Theory
 
@@ -1596,7 +1595,7 @@ Interpolated values:
   P(6) = 19.5
 ```
 
-# Newton's Backward Interpolation
+# Newton's Backward Interpolation [⬆ Back to TOC](#table-of-contents)
 
 ## Newton's Backward Interpolation Theory
 
@@ -1626,8 +1625,8 @@ Newton's backward interpolation is a numerical method used to estimate function 
 
 **Advantages:**
 
-- Excellent accuracy for points near end of data 
-- Easy to implement for equally spaced data 
+- Excellent accuracy for points near end of data
+- Easy to implement for equally spaced data
 
 **Disadvantages:**
 
@@ -1864,7 +1863,7 @@ Interpolated values:
 
 ---
 
-# Newton's Divided Difference Method
+# Newton's Divided Difference Method [⬆ Back to TOC](#table-of-contents)
 
 ## Divided Difference Theory
 
@@ -1897,7 +1896,7 @@ Divided difference is a flexible interpolation method used to estimate function 
 **Disadvantages:**
 
 - More complex calculations than equal-spacing methods
-- Divided differences can become large for widely spaced points 
+- Divided differences can become large for widely spaced points
 
 ## Divided Difference Code
 
@@ -2121,7 +2120,7 @@ Interpolated values:
 
 # Curve Fitting/Regression
 
-# Linear Regression
+# Linear Regression [⬆ Back to TOC](#table-of-contents)
 
 ## Linear Regression Theory
 
@@ -2223,7 +2222,7 @@ b = 0.900000
 Model: y = 1.300000 + 0.900000x
 ```
 
-# Polynomial Regression
+# Polynomial Regression [⬆ Back to TOC](#table-of-contents)
 
 ## Polynomial Regression Theory
 
@@ -2353,7 +2352,7 @@ int main() {
 Fitted Polynomial:y = 0.000000 + 0.000000x^1 + 1.000000x^2
 ```
 
-# Transcendental Regression
+# Transcendental Regression [⬆ Back to TOC](#table-of-contents)
 
 ## Transcendental Regression Theory
 
@@ -2454,7 +2453,7 @@ Model: y = 1.000008 * e^(0.999998x)
 
 # Numerical Integration
 
-# Simpson's 1/3 Rule
+# Simpson's 1/3 Rule [⬆ Back to TOC](#table-of-contents)
 
 ## Simpson's 1/3 Rule Theory
 
@@ -2562,7 +2561,7 @@ Test Case 3: Value of integral = 0.463649
 
 ```
 
-# Simpson's 3/8 Rule
+# Simpson's 3/8 Rule [⬆ Back to TOC](#table-of-contents)
 
 ## Simpson's 3/8 Rule Theory
 
@@ -2672,7 +2671,7 @@ Test Case 3: Value of integral = 0.0993483
 
 # Numerical Differentiation
 
-# Differentiation Using Forward Interpolation
+# Differentiation Using Forward Interpolation [⬆ Back to TOC](#table-of-contents)
 
 ## Differentiation Using Forward Interpolation Theory
 
@@ -2814,7 +2813,7 @@ Second derivative at x = 2.000000 : 2.000000
 
 ```
 
-# Differentiation Using Backward Interpolation
+# Differentiation Using Backward Interpolation [⬆ Back to TOC](#table-of-contents)
 
 ## Differentiation Using Backward Interpolation Theory
 
@@ -2841,8 +2840,8 @@ Backward interpolation differentiation is a numerical method used to approximate
 
 **Advantages:**
 
-- Excellent for derivatives near end of data set 
-- Systematic approach  
+- Excellent for derivatives near end of data set
+- Systematic approach
 
 **Disadvantages:**
 
@@ -2960,7 +2959,7 @@ Second derivative at x = 8.000000 : 2.000000
 
 # Solution of Ordinary Differential Equations
 
-# Runge-Kutta Method
+# Runge-Kutta Method [⬆ Back to TOC](#table-of-contents)
 
 ## Runge Kutta Theory
 

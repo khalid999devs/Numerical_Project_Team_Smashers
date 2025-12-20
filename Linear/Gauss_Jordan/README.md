@@ -9,7 +9,6 @@ Gauss-Jordan Elimination is a numerical method used to solve a system of linear 
 - Transforms matrix into reduced row-echelon form (diagonal matrix)
 - Eliminates variables both below and above the main diagonal
 - Each pivot element is made equal to one
-- Solution can be read directly without back substitution
 
 **Algorithm Steps:**
 
@@ -29,8 +28,9 @@ Gauss-Jordan Elimination is a numerical method used to solve a system of linear 
 
 **Disadvantages:**
 
-- Requires more computations than Gauss Elimination and less efficient for large systems
-- More prone to round-off errors with higher computational cost
+- Requires more computations than Gauss Elimination 
+- Less efficient for large systems
+  
 
 ## Gauss Jordan Code
 

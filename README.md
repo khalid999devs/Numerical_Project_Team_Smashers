@@ -1,22 +1,27 @@
 # Numerical Methods Project - Team Smashers
 
+This is a Numerical Methods Laboratory Project based on the Numerical Lab of the 2nd year 2nd semester of Department of CSE of Khulna University of Engineering and Technology. This comprehensive collection features **19 numerical methods** across 7 major categories.
+
 ## Table of Contents
 
 ## [Solution of Linear Equations](#solution-of-linear-equations)
 
 - **[Gauss Elimination Method](#gauss-elimination-method)**
+
   - [Theory](#gauss-elimination-theory)
   - [Code](#gauss-elimination-code)
   - [Input](#gauss-elimination-input)
   - [Output](#gauss-elimination-output)
 
 - **[Gauss Jordan Elimination Method](#gauss-jordan-elimination-method)**
+
   - [Theory](#gauss-jordan-theory)
   - [Code](#gauss-jordan-code)
   - [Input](#gauss-jordan-input)
   - [Output](#gauss-jordan-output)
 
 - **[LU Decomposition Method](#lu-decomposition-method)**
+
   - [Theory](#lu-decomposition-theory)
   - [Code](#lu-decomposition-code)
   - [Input](#lu-decomposition-input)
@@ -31,18 +36,21 @@
 ## [Solution of Non-Linear Equations](#solution-of-non-linear-equations)
 
 - **[Bi-section Method](#bi-section-method)**
+
   - [Theory](#bisection-theory)
   - [Code](#bisection-code)
   - [Input](#bisection-input)
   - [Output](#bisection-output)
 
 - **[False Position Method](#false-position-method)**
+
   - [Theory](#false-position-theory)
   - [Code](#false-position-code)
   - [Input](#false-position-input)
   - [Output](#false-position-output)
 
 - **[Secant Method](#secant-method)**
+
   - [Theory](#secant-theory)
   - [Code](#secant-code)
   - [Input](#secant-input)
@@ -57,12 +65,14 @@
 ## [Interpolation & Approximation](#interpolation--approximation)
 
 - **[Newton's Forward Interpolation](#newtons-forward-interpolation)**
+
   - [Theory](#newtons-forward-interpolation-theory)
   - [Code](#newtons-forward-interpolation-code)
   - [Input](#newtons-forward-interpolation-input)
   - [Output](#newtons-forward-interpolation-output)
 
 - **[Newton's Backward Interpolation](#newtons-backward-interpolation)**
+
   - [Theory](#newtons-backward-interpolation-theory)
   - [Code](#newtons-backward-interpolation-code)
   - [Input](#newtons-backward-interpolation-input)
@@ -77,12 +87,14 @@
 ## [Curve Fitting/Regression](#curve-fittingregression)
 
 - **[Linear Regression](#linear-regression)**
+
   - [Theory](#linear-regression-theory)
   - [Code](#linear-regression-code)
   - [Input](#linear-regression-input)
   - [Output](#linear-regression-output)
 
 - **[Polynomial Regression](#polynomial-regression)**
+
   - [Theory](#polynomial-regression-theory)
   - [Code](#polynomial-regression-code)
   - [Input](#polynomial-regression-input)
@@ -97,6 +109,7 @@
 ## [Numerical Integration](#numerical-integration)
 
 - **[Simpson's 1/3 Rule](#simpsons-13-rule)**
+
   - [Theory](#simpsons-13-rule-theory)
   - [Code](#simpsons-13-rule-code)
   - [Input](#simpsons-13-rule-input)
@@ -111,6 +124,7 @@
 ## [Numerical Differentiation](#numerical-differentiation)
 
 - **[Differentiation Using Forward Interpolation](#differentiation-using-forward-interpolation)**
+
   - [Theory](#differentiation-using-forward-interpolation-theory)
   - [Code](#differentiation-using-forward-interpolation-code)
   - [Input](#differentiation-using-forward-interpolation-input)
@@ -1101,32 +1115,32 @@ double f(double x) {
 
 void secantMethod(double x0, double x1, double tolerance, int maxIter) {
     cout << fixed << setprecision(6);
-    
+
     double x2, f0, f1;
-    
+
     for (int i = 1; i <= maxIter; i++) {
         f0 = f(x0);
         f1 = f(x1);
-        
+
         if (fabs(f1 - f0) < 1e-10) {
             cout << "\nError: Division by zero encountered!" << endl;
             return;
         }
-        
+
         x2 = x1 - (f1 * (x1 - x0)) / (f1 - f0);
-        
-        cout << i << "\t" << x0 << "\t" << x1 << "\t" 
+
+        cout << i << "\t" << x0 << "\t" << x1 << "\t"
              << x2 << "\t" << f(x2) << endl;
-        
+
         if (fabs(x2 - x1) < tolerance) {
             cout << "\nConvergence achieved!" << endl;
             break;
         }
-        
+
         x0 = x1;
         x1 = x2;
     }
-    
+
     cout << "\nRoot found at x = " << x2 << endl;
     cout << "Function value at root: f(" << x2 << ") = " << f(x2) << endl;
 }
@@ -1249,37 +1263,37 @@ double df(double x) {
 
 void newtonRaphson(double x0, double tolerance, int maxIter) {
     cout << fixed << setprecision(6);
-    
+
     double x1, fx, dfx;
-    
+
     for (int i = 1; i <= maxIter; i++) {
         fx = f(x0);
         dfx = df(x0);
-        
+
         if (fabs(dfx) < 1e-10) {
             cout << "\nError: Derivative is zero. Cannot continue." << endl;
             return;
         }
-        
+
         x1 = x0 - fx / dfx;
-        
-        cout << i << "\t" << x0 << "\t" << fx << "\t" 
+
+        cout << i << "\t" << x0 << "\t" << fx << "\t"
              << dfx << "\t" << x1 << endl;
-        
+
         if (fabs(x1 - x0) < tolerance) {
             cout << "\nConvergence achieved!" << endl;
             x0 = x1;
             break;
         }
-        
+
         if (fabs(fx) < tolerance) {
             cout << "\nRoot found (f(x) ~ 0)!" << endl;
             break;
         }
-        
+
         x0 = x1;
     }
-    
+
     cout << "\nRoot found at x = " << x0 << endl;
     cout << "Function value at root: f(" << x0 << ") = " << f(x0) << endl;
 }
@@ -1914,6 +1928,7 @@ Divided difference is a flexible interpolation method used to estimate function 
 
 - More complex calculations than equal-spacing methods with potential numerical precision issues
 - Divided differences can become large for widely spaced points affecting stability
+
 ---
 
 ## Divided Difference
@@ -2198,11 +2213,11 @@ Calculate summations of x, y, xy and x^2
 
 Compute b using,
 
-#### b = (n*sum(xy) - sum(x)sum(y)) / (nsum(x^2) - (sum(x))^2)
+#### b = (n\*sum(xy) - sum(x)sum(y)) / (nsum(x^2) - (sum(x))^2)
 
 Compute a using,
 
-#### a = (sum(y) - b*sum(x)) / n
+#### a = (sum(y) - b\*sum(x)) / n
 
 Substitute values of a and b to obtain the regression equation
 
@@ -2494,7 +2509,7 @@ int main(){
 
 ## Transcendental Regression Output
 
-```
+````
 a= 1.000008
 b= 0.999998
 Model:y = 1.000008* e^(0.999998x)
@@ -2518,9 +2533,11 @@ Simpson's 1/3 rule is a numerical integration method used to approximate definit
 
 **Formula:**
 
-```
-Integral = (h/3) * [f(x0) + 4*f(x1) + 2*f(x2) + 4*f(x3) + ... + 4*f(xn-1) + f(xn)]
-```
+````
+
+Integral = (h/3) * [f(x0) + 4*f(x1) + 2*f(x2) + 4*f(x3) + ... + 4\*f(xn-1) + f(xn)]
+
+````
 
 Where h = (b-a)/n and coefficients follow pattern: 1, 4, 2, 4, 2, ..., 4, 1
 
@@ -2593,7 +2610,7 @@ int main()
     return 0;
 }
 
-```
+````
 
 ## Simpson's 1/3 Rule Input
 
@@ -2633,7 +2650,7 @@ This method is more accurate than the trapezoidal rule and can be used when the 
 
 **Formula:**
 
-Integral = (3h/8) * [f(x0) + 3*f(x1) + 3*f(x2) + 2*f(x3) + 3*f(x4) + ... + f(xn)]
+Integral = (3h/8) * [f(x0) + 3*f(x1) + 3*f(x2) + 2*f(x3) + 3\*f(x4) + ... + f(xn)]
 
 Where coefficients follow the pattern: 1, 3, 3, 2, 3, 3, 2, ..., 3, 3, 1
 
@@ -3123,16 +3140,13 @@ Root: 3.718282
 
 ---
 
-## Conclusion
+## Contribution
 
-This comprehensive document covers all 19 numerical methods implemented across 7 major categories:
+**Contributed by Team Smashers:**
 
-1. **Linear Systems**: Gauss Elimination, Gauss Jordan, LU Decomposition, Matrix Inversion
-2. **Non-Linear Equations**: Bisection, False Position, Secant, Newton-Raphson  
-3. **Interpolation**: Newton's Forward, Newton's Backward, Divided Difference
-4. **Regression**: Linear, Polynomial, Transcendental
-5. **Integration**: Simpson's 1/3 Rule, Simpson's 3/8 Rule
-6. **Differentiation**: Forward Interpolation, Backward Interpolation
-7. **Differential Equations**: Runge-Kutta Method
+- **Khalid Ahammed** - 2207035
+- **Majharul Sajid** - 2207060
+- **Sadiq Bin Sahidullah** - 2207036
 
-Each method includes complete theory explanations, C++ implementations, comprehensive input/output examples, and practical applications. This serves as a complete reference for numerical analysis implementations.
+Department of Computer Science and Engineering,  
+Khulna University of Engineering and Technology

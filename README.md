@@ -313,7 +313,6 @@ Gauss-Jordan Elimination is a numerical method used to solve a system of linear 
 - Transforms matrix into reduced row-echelon form (diagonal matrix)
 - Eliminates variables both below and above the main diagonal
 - Each pivot element is made equal to one
-- Solution can be read directly without back substitution
 
 **Algorithm Steps:**
 
@@ -333,8 +332,8 @@ Gauss-Jordan Elimination is a numerical method used to solve a system of linear 
 
 **Disadvantages:**
 
-- Requires more computations than Gauss Elimination and less efficient for large systems
-- More prone to round-off errors with higher computational cost
+- Requires more computations than Gauss Elimination
+- Less efficient for large systems
 
 ## Gauss Jordan Code
 
@@ -461,7 +460,6 @@ LU Decomposition is a numerical method that breaks a square matrix into the prod
 - L is lower triangular (elements below diagonal)
 - U is upper triangular (elements on and above diagonal)
 - Solves system in two stages: Ly = b, then Ux = y
-- Particularly efficient for multiple systems with same coefficient matrix
 
 **Algorithm Steps:**
 
@@ -479,12 +477,12 @@ LU Decomposition is a numerical method that breaks a square matrix into the prod
 **Advantages:**
 
 - Very efficient when solving multiple systems with same coefficient matrix
-- Decomposition can be reused reducing computational complexity for repeated solutions
+- Decomposition can be reused for reducing computational complexity
 
 **Disadvantages:**
 
 - Requires square non-singular matrix and may fail if pivot elements are zero
-- Not efficient for single system solution due to initial decomposition overhead
+- Not efficient for single system solution
 
 ## LU Decomposition Code
 
@@ -643,7 +641,6 @@ Matrix Inversion is a method used to find the inverse of a square matrix, which 
 - Only square and non-singular matrices can be inverted
 - A × A^(-1) = I (identity matrix)
 - If determinant is zero, matrix is singular and has no inverse
-- Commonly computed using Gauss-Jordan elimination
 - Useful for solving systems of equations: x = A^(-1) × b
 
 **Algorithm Steps:**
@@ -659,13 +656,13 @@ Matrix Inversion is a method used to find the inverse of a square matrix, which 
 
 **Advantages:**
 
-- Provides direct solution for systems of equations and useful in matrix algebra
+- Provides direct solution for systems of equations
 - Once computed, can be reused for multiple problems with same coefficient matrix
 
 **Disadvantages:**
 
-- Computationally expensive O(n^3) operations and numerically unstable for ill-conditioned matrices
-- Not efficient for single system solution and sensitive to round-off errors
+- Computationally expensive O(n^3) operations
+- Not efficient for single system solution
 
 ## Matrix Inversion Code
 
@@ -807,13 +804,12 @@ Matrix is singular and cannot be inverted.
 
 ## Bisection Theory
 
-The Bisection Method is one of the simplest and most reliable methods for finding the root of a non-linear equation. It works by repeatedly dividing an interval in half and selecting the subinterval where the root exists.
+The Bisection Method is one of the simplest and most reliable methods for finding the root of a non-linear equation.
 
 **Key Concepts:**
 
 - Based on the Intermediate Value Theorem
 - If f(x) is continuous on [a, b] and f(a) × f(b) < 0, then there exists at least one root in (a, b)
-- Also known as interval halving method or binary search method
 
 **Algorithm Steps:**
 
@@ -826,8 +822,8 @@ The Bisection Method is one of the simplest and most reliable methods for findin
 
 **Advantages:**
 
-- Always converges if initial assumptions are met and simple to implement
-- No need for derivatives or complex calculations
+- Always converges if initial assumptions are met
+- Simple solution
 
 **Disadvantages:**
 
@@ -838,6 +834,7 @@ The Bisection Method is one of the simplest and most reliable methods for findin
 
 ```cpp
 #include <iostream>
+#include <fstream>
 #include <cmath>
 #include <iomanip>
 using namespace std;
@@ -846,13 +843,13 @@ double f(double x) {
     return x*x*x - x - 2;
 }
 
-void bisection(double a, double b, double tolerance) {
+void bisection(ofstream &fout, double a, double b, double tolerance) {
     if (f(a) * f(b) >= 0) {
-        cout << "Error: f(a) and f(b) must have opposite signs!" << endl;
+        fout << "Error: f(a) and f(b) must have opposite signs!" << endl;
         return;
     }
 
-    cout << fixed << setprecision(6);
+    fout << fixed << setprecision(6);
 
     double c;
     int iteration = 0;
@@ -861,7 +858,7 @@ void bisection(double a, double b, double tolerance) {
         iteration++;
         c = (a + b) / 2.0;
 
-        cout << iteration << "\t" << a << "\t" << b << "\t"
+        fout << iteration << "\t" << a << "\t" << b << "\t"
              << c << "\t" << f(c) << endl;
 
         if (f(c) == 0.0) {
@@ -874,21 +871,24 @@ void bisection(double a, double b, double tolerance) {
         }
     }
 
-    cout << "\nRoot found at x = " << c << endl;
-    cout << "Function value at root: f(" << c << ") = " << f(c) << endl;
+    fout << "\nRoot found at x = " << c << endl;
+    fout << "Function value at root: f(" << c << ") = " << f(c) << endl;
 }
 
 int main() {
+    ifstream fin("input.txt");
+    ofstream fout("output.txt");
+
     double a, b, tolerance;
 
-    cout << "\nEnter the first point (a): ";
-    cin >> a;
-    cout << "Enter the second point (b): ";
-    cin >> b;
-    cout << "Enter tolerance (e.g., 0.0001): ";
-    cin >> tolerance;
+    fin >> a;
+    fin >> b;
+    fin >> tolerance;
 
-    bisection(a, b, tolerance);
+    bisection(fout, a, b, tolerance);
+
+    fin.close();
+    fout.close();
 
     return 0;
 }
@@ -905,10 +905,6 @@ int main() {
 ## Bisection Output
 
 ```
-Enter the first point (a): 1.5
-Enter the second point (b): 2.0
-Enter tolerance (e.g., 0.0001): 0.0001
-
 1	1.500000	2.000000	1.750000	0.609375
 2	1.500000	1.750000	1.625000	-0.099609
 3	1.625000	1.750000	1.687500	0.224365
@@ -929,14 +925,12 @@ Function value at root: f(1.645264) = -0.000746
 
 ## False Position Theory
 
-The False Position Method (also known as Regula Falsi Method or Method of Chords) is a root-finding algorithm that combines features of the bisection method with linear interpolation.
+The False Position Method is a root-finding algorithm that combines features of the bisection method with linear interpolation.
 
 **Key Concepts:**
 
 - Similar to bisection but uses a weighted average instead of simple midpoint
-- Draws a secant line between two points and finds where it crosses the x-axis
 - Generally converges faster than bisection method
-- Always keeps the root bracketed between two points
 
 **Algorithm Steps:**
 
@@ -964,6 +958,7 @@ The False Position Method (also known as Regula Falsi Method or Method of Chords
 
 ```cpp
 #include <iostream>
+#include <fstream>
 #include <cmath>
 #include <iomanip>
 using namespace std;
@@ -972,29 +967,29 @@ double f(double x) {
     return x*x*x - x - 2;
 }
 
-void falsePosition(double a, double b, double tolerance, int maxIter) {
+void falsePosition(ofstream &fout, double a, double b, double tolerance, int maxIter) {
     if (f(a) * f(b) >= 0) {
-        cout << "Error: f(a) and f(b) must have opposite signs!" << endl;
+        fout << "Error: f(a) and f(b) must have opposite signs!" << endl;
         return;
     }
 
-    cout << fixed << setprecision(6);
+    fout << fixed << setprecision(6);
 
     double c, prev_c = 0;
 
     for (int i = 1; i <= maxIter; i++) {
         c = (a * f(b) - b * f(a)) / (f(b) - f(a));
 
-        cout << i << "\t" << a << "\t" << b << "\t"
+        fout << i << "\t" << a << "\t" << b << "\t"
              << c << "\t" << f(c) << endl;
 
         if (f(c) == 0.0) {
-            cout << "\nExact root found!" << endl;
+            fout << "\nExact root found!" << endl;
             break;
         }
 
         if (i > 1 && fabs(c - prev_c) < tolerance) {
-            cout << "\nDesired accuracy achieved!" << endl;
+            fout << "\nDesired accuracy achieved!" << endl;
             break;
         }
 
@@ -1007,24 +1002,26 @@ void falsePosition(double a, double b, double tolerance, int maxIter) {
         prev_c = c;
     }
 
-    cout << "\nRoot found at x = " << c << endl;
-    cout << "Function value at root: f(" << c << ") = " << f(c) << endl;
+    fout << "\nRoot found at x = " << c << endl;
+    fout << "Function value at root: f(" << c << ") = " << f(c) << endl;
 }
 
 int main() {
+    ifstream fin("input.txt");
+    ofstream fout("output.txt");
+
     double a, b, tolerance;
     int maxIter;
 
-    cout << "\nEnter the first point (a): ";
-    cin >> a;
-    cout << "Enter the second point (b): ";
-    cin >> b;
-    cout << "Enter tolerance (e.g., 0.0001): ";
-    cin >> tolerance;
-    cout << "Enter maximum iterations: ";
-    cin >> maxIter;
+    fin >> a;
+    fin >> b;
+    fin >> tolerance;
+    fin >> maxIter;
 
-    falsePosition(a, b, tolerance, maxIter);
+    falsePosition(fout, a, b, tolerance, maxIter);
+
+    fin.close();
+    fout.close();
 
     return 0;
 }
@@ -1042,11 +1039,6 @@ int main() {
 ## False Position Output
 
 ```
-Enter the first point (a): 1.5
-Enter the second point (b): 2.0
-Enter tolerance (e.g., 0.0001): 0.0001
-Enter maximum iterations: 20
-
 1	1.500000	2.000000	1.622951	-0.117362
 2	1.622951	2.000000	1.640119	-0.030693
 3	1.640119	2.000000	1.644511	-0.008172
@@ -1064,14 +1056,13 @@ Function value at root: f(1.646092) = -0.000155
 
 ## Secant Theory
 
-The Secant Method is an iterative root-finding algorithm that uses a succession of roots of secant lines to approximate a root of a function. It's faster than bisection but doesn't require derivative calculation like Newton-Raphson.
+The Secant Method is an iterative root-finding algorithm that uses a succession of roots of secant lines to approximate a root of a function.
 
 **Key Concepts:**
 
 - Uses two initial guesses to approximate the derivative
 - Does not require the function to be differentiable
 - Approximates the tangent line with a secant line through two points
-- Convergence is not always guaranteed but is generally fast
 
 **Formula:**
 
@@ -1089,22 +1080,18 @@ x(n+1) = x(n) - f(x(n)) × (x(n) - x(n-1)) / (f(x(n)) - f(x(n-1)))
 **Advantages:**
 
 - Faster super-linear convergence than bisection and false position methods
-- No need to calculate derivatives, only requires function evaluations
+- No need to calculate derivatives
 
 **Disadvantages:**
 
 - Convergence not guaranteed and may diverge with poor initial guesses
 - Requires two initial values unlike Newton-Raphson method
 
-**Comparison with Newton-Raphson:**
-
-- Secant: Uses finite difference approximation, no derivative needed
-- Newton: Uses actual derivative, faster convergence (quadratic vs super-linear)
-
 ## Secant Code
 
 ```cpp
 #include <iostream>
+#include <fstream>
 #include <cmath>
 #include <iomanip>
 using namespace std;
@@ -1113,8 +1100,8 @@ double f(double x) {
     return x*x*x - x - 2;
 }
 
-void secantMethod(double x0, double x1, double tolerance, int maxIter) {
-    cout << fixed << setprecision(6);
+void secantMethod(ofstream &fout, double x0, double x1, double tolerance, int maxIter) {
+    fout << fixed << setprecision(6);
 
     double x2, f0, f1;
 
@@ -1123,17 +1110,17 @@ void secantMethod(double x0, double x1, double tolerance, int maxIter) {
         f1 = f(x1);
 
         if (fabs(f1 - f0) < 1e-10) {
-            cout << "\nError: Division by zero encountered!" << endl;
+            fout << "\nError: Division by zero encountered!" << endl;
             return;
         }
 
         x2 = x1 - (f1 * (x1 - x0)) / (f1 - f0);
 
-        cout << i << "\t" << x0 << "\t" << x1 << "\t"
+        fout << i << "\t" << x0 << "\t" << x1 << "\t"
              << x2 << "\t" << f(x2) << endl;
 
         if (fabs(x2 - x1) < tolerance) {
-            cout << "\nConvergence achieved!" << endl;
+            fout << "\nConvergence achieved!" << endl;
             break;
         }
 
@@ -1141,24 +1128,26 @@ void secantMethod(double x0, double x1, double tolerance, int maxIter) {
         x1 = x2;
     }
 
-    cout << "\nRoot found at x = " << x2 << endl;
-    cout << "Function value at root: f(" << x2 << ") = " << f(x2) << endl;
+    fout << "\nRoot found at x = " << x2 << endl;
+    fout << "Function value at root: f(" << x2 << ") = " << f(x2) << endl;
 }
 
 int main() {
+    ifstream fin("input.txt");
+    ofstream fout("output.txt");
+
     double x0, x1, tolerance;
     int maxIter;
 
-    cout << "\nEnter first initial guess (x0): ";
-    cin >> x0;
-    cout << "Enter second initial guess (x1): ";
-    cin >> x1;
-    cout << "Enter tolerance (e.g., 0.0001): ";
-    cin >> tolerance;
-    cout << "Enter maximum iterations: ";
-    cin >> maxIter;
+    fin >> x0;
+    fin >> x1;
+    fin >> tolerance;
+    fin >> maxIter;
 
-    secantMethod(x0, x1, tolerance, maxIter);
+    secantMethod(fout, x0, x1, tolerance, maxIter);
+
+    fin.close();
+    fout.close();
 
     return 0;
 }
@@ -1176,11 +1165,6 @@ int main() {
 ## Secant Output
 
 ```
-Enter first initial guess (x0): 1.5
-Enter second initial guess (x1): 2.0
-Enter tolerance (e.g., 0.0001): 0.0001
-Enter maximum iterations: 20
-
 1	1.500000	2.000000	1.607143	-0.175623
 2	2.000000	1.607143	1.658824	0.062439
 3	1.607143	1.658824	1.643586	-0.014750
@@ -1198,14 +1182,13 @@ Function value at root: f(1.645837) = 0.000202
 
 ## Newton Raphson Theory
 
-The Newton-Raphson Method is one of the most powerful and widely-used techniques for finding roots of equations. It uses the tangent line at a point to approximate the root and converges very quickly when starting near the actual root.
+The Newton-Raphson Method is one of the most powerful and widely-used techniques for finding roots of equations. It uses the tangent line at a point to approximate the root
 
 **Key Concepts:**
 
 - Requires the function and its derivative
 - Uses linear approximation via tangent lines
 - Quadratic convergence (very fast when it works)
-- Named after Isaac Newton and Joseph Raphson
 
 **Formula:**
 
@@ -1219,10 +1202,7 @@ Where:
 - f(x(n)) is the function value at x(n)
 - f'(x(n)) is the derivative value at x(n)
 
-**Geometric Interpretation:**
-Draw a tangent line to f(x) at point x(n). The point where this tangent crosses the x-axis gives us the next approximation x(n+1).
-
-**Algorithm Steps:**
+**Algorithm Steps:\*\***
 
 1. Start with an initial guess x0 close to the root
 2. Calculate f(x0) and f'(x0)
@@ -1232,14 +1212,14 @@ Draw a tangent line to f(x) at point x(n). The point where this tangent crosses 
 **Advantages:**
 
 - Very fast quadratic convergence when near the root
-- Works well for most smooth functions and can identify repeated roots
+- Works well for most smooth functions
 
 **Disadvantages:**
 
 - Requires derivative calculation and may diverge if f'(x) = 0
-- No guaranteed convergence and sensitive to initial guess quality
+- Sensitive to initial guess quality
 
-**When to Use:**
+## Newton Raphson Code
 
 - When derivative is easy to compute
 - When a good initial guess is available
@@ -1249,6 +1229,7 @@ Draw a tangent line to f(x) at point x(n). The point where this tangent crosses 
 
 ```cpp
 #include <iostream>
+#include <fstream>
 #include <cmath>
 #include <iomanip>
 using namespace std;
@@ -1261,8 +1242,8 @@ double df(double x) {
     return 3*x*x - 1;
 }
 
-void newtonRaphson(double x0, double tolerance, int maxIter) {
-    cout << fixed << setprecision(6);
+void newtonRaphson(ofstream &fout, double x0, double tolerance, int maxIter) {
+    fout << fixed << setprecision(6);
 
     double x1, fx, dfx;
 
@@ -1271,45 +1252,48 @@ void newtonRaphson(double x0, double tolerance, int maxIter) {
         dfx = df(x0);
 
         if (fabs(dfx) < 1e-10) {
-            cout << "\nError: Derivative is zero. Cannot continue." << endl;
+            fout << "\nError: Derivative is zero. Cannot continue." << endl;
             return;
         }
 
         x1 = x0 - fx / dfx;
 
-        cout << i << "\t" << x0 << "\t" << fx << "\t"
+        fout << i << "\t" << x0 << "\t" << fx << "\t"
              << dfx << "\t" << x1 << endl;
 
         if (fabs(x1 - x0) < tolerance) {
-            cout << "\nConvergence achieved!" << endl;
+            fout << "\nConvergence achieved!" << endl;
             x0 = x1;
             break;
         }
 
         if (fabs(fx) < tolerance) {
-            cout << "\nRoot found (f(x) ~ 0)!" << endl;
+            fout << "\nRoot found (f(x) ~ 0)!" << endl;
             break;
         }
 
         x0 = x1;
     }
 
-    cout << "\nRoot found at x = " << x0 << endl;
-    cout << "Function value at root: f(" << x0 << ") = " << f(x0) << endl;
+    fout << "\nRoot found at x = " << x0 << endl;
+    fout << "Function value at root: f(" << x0 << ") = " << f(x0) << endl;
 }
 
 int main() {
+    ifstream fin("input.txt");
+    ofstream fout("output.txt");
+
     double x0, tolerance;
     int maxIter;
 
-    cout << "\nEnter initial guess (x0): ";
-    cin >> x0;
-    cout << "Enter tolerance (e.g., 0.0001): ";
-    cin >> tolerance;
-    cout << "Enter maximum iterations: ";
-    cin >> maxIter;
+    fin >> x0;
+    fin >> tolerance;
+    fin >> maxIter;
 
-    newtonRaphson(x0, tolerance, maxIter);
+    newtonRaphson(fout, x0, tolerance, maxIter);
+
+    fin.close();
+    fout.close();
 
     return 0;
 }
@@ -1326,10 +1310,6 @@ int main() {
 ## Newton Raphson Output
 
 ```
-Enter initial guess (x0): 2.0
-Enter tolerance (e.g., 0.0001): 0.0001
-Enter maximum iterations: 20
-
 1	2.000000	4.000000	11.000000	1.636364
 2	1.636364	0.360465	7.030992	1.585111
 3	1.585111	0.014527	6.535517	1.582887
@@ -1635,7 +1615,6 @@ Newton's backward interpolation is a numerical method used to estimate function 
 - Uses backward difference table starting from last data point
 - Best suited for interpolation near the end of data set
 - Constructs interpolation polynomial using backward differences
-- Complementary method to forward interpolation
 
 **Algorithm Steps:**
 
@@ -1654,8 +1633,8 @@ Newton's backward interpolation is a numerical method used to estimate function 
 
 **Advantages:**
 
-- Excellent accuracy for points near end of data with systematic organized approach
-- Easy to implement for equally spaced data and widely used in numerical analysis
+- Excellent accuracy for points near end of data
+- Easy to implement for equally spaced data
 
 **Disadvantages:**
 
@@ -1894,41 +1873,6 @@ Interpolated values:
 
 ## Divided Difference
 
-## Divided Difference Theory
-
-Divided difference is a flexible interpolation method used to estimate function values from given data points when the x-values are not equally spaced.
-
-**Key Concepts:**
-
-- Works with unequally spaced data points
-- Uses divided difference table instead of regular difference table
-- Each column represents successive divided differences
-- Interpolation polynomial built using top row of table
-- More flexible than Newton's forward/backward methods
-
-**Algorithm Steps:**
-
-1. Arrange data points (x0,y0), (x1,y1), ..., (xn,yn)
-2. Construct divided difference table:
-   - First column: f[xi] = yi (function values)
-   - Second column: f[xi,xi+1] = (f[xi+1] - f[xi]) / (xi+1 - xi)
-   - Continue: f[xi,...,xi+k] = (f[xi+1,...,xi+k] - f[xi,...,xi+k-1]) / (xi+k - xi)
-3. Build interpolation polynomial:
-   ```
-   P(x) = f[x0] + f[x0,x1](x-x0) + f[x0,x1,x2](x-x0)(x-x1) + ...
-   ```
-4. Evaluate polynomial at desired interpolation point
-
-**Advantages:**
-
-- Handles unequally spaced data points with no spacing restrictions on x-values
-- Flexible and efficient for adding new data points with easy implementation
-
-**Disadvantages:**
-
-- More complex calculations than equal-spacing methods with potential numerical precision issues
-- Divided differences can become large for widely spaced points affecting stability
-
 ---
 
 ## Divided Difference
@@ -1941,8 +1885,6 @@ Divided difference is a flexible interpolation method used to estimate function 
 
 - Works with unequally spaced data points
 - Uses divided difference table instead of regular difference table
-- Each column represents successive divided differences
-- Interpolation polynomial built using top row of table
 - More flexible than Newton's forward/backward methods
 
 **Algorithm Steps:**
@@ -1965,8 +1907,8 @@ Divided difference is a flexible interpolation method used to estimate function 
 
 **Disadvantages:**
 
-- More complex calculations than equal-spacing methods with potential numerical precision issues
-- Divided differences can become large for widely spaced points affecting stability
+- More complex calculations than equal-spacing methods
+- Divided differences can become large for widely spaced points
 
 ## Divided Difference Code
 
@@ -2194,42 +2136,42 @@ Interpolated values:
 
 ## Linear Regression Theory
 
-Linear Regression is a numerical method used to determine the best-fit straight line for a given set of data points. It establishes a linear relationship between an independent variable and a dependent variable using the least squares principle.
+Linear Regression is a numerical method to determine the best-fit straight line for a given set of data points. It establishes a linear relation between a dependent variable and an independent variable.
 
-### Key Concepts:
+**Key Concepts:**
 
 - Based on the Least Squares Method
 - Minimizes the sum of squared errors between observed and predicted values
-- Assumes a linear relationship of the form y = a + bx
-- Suitable when data follows an approximately straight-line trend
+- Assumes a linear relationship of form y = a + bx
+- Suitable when data follows an approximate straight-line trend
 
-### Algorithm Steps:
+**Algorithm Steps:**
 
 Assume the model
 
-### y = a + bx
+y = a + bx
 
 Calculate summations of x, y, xy and x^2
 
 Compute b using,
 
-#### b = (n\*sum(xy) - sum(x)sum(y)) / (nsum(x^2) - (sum(x))^2)
+b = (n\*sum(xy) - sum(x)sum(y)) / (nsum(x^2) - (sum(x))^2)
 
 Compute a using,
 
-#### a = (sum(y) - b\*sum(x)) / n
+a = (sum(y) - b\*sum(x)) / n
 
 Substitute values of a and b to obtain the regression equation
 
-### Advantages:
+**Advantages:**
 
-- Simple implementation requiring minimal computation with wide applicability
-- Widely used in engineering and data analysis for straightforward linear relationships
+- Simple implementation and simple computation
+- Widely used for straightforward linear relations
 
-### Disadvantages:
+**Disadvantages:**
 
-- Only applicable to linear data patterns and sensitive to outliers
-- Cannot represent complex nonlinear relationships limiting versatility
+- Only applicable to linear data patterns
+- Cannot represent non-linear relations
 
 ## Linear Regression Code
 
@@ -2237,31 +2179,37 @@ Substitute values of a and b to obtain the regression equation
 #include <bits/stdc++.h>
 using namespace std;
 
-int main(){
+int main() {
+    ifstream fin("input.txt");
+    ofstream fout("output.txt");
+
     int n;
-    cin>>n;
+    fin >> n;
 
-    vector<double>x(n),y(n);
-    for(int i=0;i<n;i++){
-        cin>>x[i]>>y[i];
+    vector<double> x(n), y(n);
+    for (int i = 0; i < n; i++) {
+        fin >> x[i] >> y[i];
     }
 
-    double sumX=0,sumY=0,sumXY=0,sumX2=0;
+    double sumX = 0, sumY = 0, sumXY = 0, sumX2 = 0;
 
-    for(int i=0;i<n;i++){
-        sumX  +=x[i];
-        sumY  +=y[i];
-        sumXY +=x[i]*y[i];
-        sumX2 +=x[i]*x[i];
+    for (int i = 0; i < n; i++) {
+        sumX  += x[i];
+        sumY  += y[i];
+        sumXY += x[i] * y[i];
+        sumX2 += x[i] * x[i];
     }
 
-    double b =(n*sumXY - sumX*sumY) / (n*sumX2 - sumX*sumX);
-    double a = (sumY - b*sumX) / n;
+    double b = (n * sumXY - sumX * sumY) / (n * sumX2 - sumX * sumX);
+    double a = (sumY - b * sumX) / n;
 
-    cout<<fixed<<setprecision(6);
-    cout<<"a = "<<a<<endl;
-    cout<<"b = "<<b<<endl;
-    cout<<"Model: y = "<<a<<" + "<<b<<"x"<<endl;
+    fout << fixed << setprecision(6);
+    fout << "a = " << a << endl;
+    fout << "b = " << b << endl;
+    fout << "Model: y = " << a << " + " << b << "x" << endl;
+
+    fin.close();
+    fout.close();
 
     return 0;
 }
@@ -2292,32 +2240,31 @@ Model: y = 1.300000 + 0.900000x
 
 ## Polynomial Regression Theory
 
-Polynomial regression is a curve fitting technique used when the relationship between variables is nonlinear. It approximates the data using a polynomial equation of higher degree.
+Polynomial regression is a curve fitting technique used when the relation is nonlinear. It uses a polynomial equation of higher degree for approximation.
 
-### Key Concepts:
+**Key Concepts:**
 
-- Extension of linear regression
+- Based on Least Squares Method
 - Fits data to a polynomial of degree m
-- Uses the Least Squares Method
-- Coefficients are determined using normal equations
+- It is an extension of linear regression
 
-### Algorithm Steps:
+**Algorithm Steps:**
 
 - Assume a polynomial equation of required degree
 - Form normal equations using sums of powers of x
-- Convert equations into matrix form
-- Solve the system using Gaussian Elimination
+- Convert equation into matrix
+- Solve it using Gauss Elimination
 - Determine polynomial coefficients
 - Construct the fitted polynomial equation
 
-### Advantages:
+**Advantages:**
 
-- Can model complex nonlinear trends with more flexibility than linear regression
-- Provides accurate approximation within the given data range
+- Model complex non-linear relation
+- Provides accurate approximation within a given range
 
-### Disadvantages:
+**Disadvantages:**
 
-- Higher degree polynomials may cause overfitting and are computationally expensive
+- Higher degree polynomial may cause overfitting
 - Poor extrapolation outside data range with potential numerical instability
 
 ## Polynomial Regression Code
@@ -2355,50 +2302,50 @@ vector<double>solveGaussian(vector<vector<double>>A,vector<double>B){
 }
 
 int main() {
-    int n,m;
-    cin>>n>>m;
+    ifstream fin("input.txt");
+    ofstream fout("output.txt");
 
-    vector<double>x(n),y(n);
-    for(int i=0;i<n;i++)
-        cin>>x[i]>>y[i];
+    int n, m;
+    fin >> n >> m;
 
+    vector<double> x(n), y(n);
+    for (int i = 0; i < n; i++)
+        fin >> x[i] >> y[i];
 
-    vector<vector<double>> A(m+1,vector<double>(m+1,0));
-    vector<double> B(m+1,0);
+    vector<vector<double>> A(m + 1, vector<double>(m + 1, 0));
+    vector<double> B(m + 1, 0);
 
-
-    vector<double> S(2*m+1,0);
-    for(int i=0;i<n;i++){
-        double xi=1;
-        for(int k=0;k<=2*m;k++){
+    vector<double> S(2 * m + 1, 0);
+    for (int i = 0; i < n; i++) {
+        double xi = 1;
+        for (int k = 0; k <= 2 * m; k++) {
             S[k] += xi;
             xi *= x[i];
         }
     }
 
+    for (int i = 0; i <= m; i++)
+        for (int j = 0; j <= m; j++)
+            A[i][j] = S[i + j];
 
-    for(int i=0;i<=m;i++)
-        for(int j=0;j<=m;j++)
-            A[i][j] = S[i+j];
-
-
-    for(int i=0;i<=m;i++){
-        for(int j=0;j<n;j++)
-            B[i] += y[j]*pow(x[j], i);
+    for (int i = 0; i <= m; i++) {
+        for (int j = 0; j < n; j++)
+            B[i] += y[j] * pow(x[j], i);
     }
 
+    vector<double> coeff = solveGaussian(A, B);
 
-    vector<double> coeff=solveGaussian(A,B);
-
-
-    cout<<fixed<<setprecision(6);
-    cout<<"Fitted Polynomial:y = ";
-    for(int i=0;i<=m;i++){
-        cout<<coeff[i];
-        if(i>=1) cout<<"x^"<<i;
-        if(i!=m) cout<<" + ";
+    fout << fixed << setprecision(6);
+    fout << "Fitted Polynomial: y = ";
+    for (int i = 0; i <= m; i++) {
+        fout << coeff[i];
+        if (i >= 1) fout << "x^" << i;
+        if (i != m) fout << " + ";
     }
-    cout<<endl;
+    fout << endl;
+
+    fin.close();
+    fout.close();
 
     return 0;
 }
@@ -2427,33 +2374,33 @@ Fitted Polynomial:y = 0.000000 + 0.000000x^1 + 1.000000x^2
 
 ## Transcendental Regression Theory
 
-Transcendental regression is used when the relationship between variables follows an exponential pattern. It is commonly applied in growth and decay processes.
+Transcendental regression is used when the relation follows an exponential pattern. It is generally applied in growth and decay processes.
 
-### Key Concepts:
+**Key Concepts:**
 
-- Used for exponential models of the form y = a e^(bx)
-- Nonlinear equation is converted into linear form using logarithms
+- Used for exponential models of form y = ae^(bx)
+- Nonlinear equation is converted into linear using logarithms
 - Based on least squares after transformation
-- Requires all y values to be positive
 
-### Algorithm Steps:
+**Algorithm Steps:**
 
-- Take natural logarithm on both sides of the equation
-- Convert equation to ln(y) = ln(a) + bx
-- Treat ln(y) as dependent variable and x as independent variable
+- Take logarithm on both sides of equation
+- Convert equation to ln(y)= ln(a) + bx
+- Treat ln(y) as dependent variable(Y) and x as independent variable
 - Apply linear regression to find coefficients
 - Calculate a by taking exponential of ln(a)
-- Substitute a and b into the original exponential equation
+- Substitute a and b into original equation
 
-### Advantages:
+**Advantages:**
 
-- Effectively models exponential growth or decay by converting nonlinear to linear form
-- Useful in population studies and engineering systems with exponential behavior
+- Effectively models exponential growth or decay
+- Useful in studies and systems with exponential behavior
 
-### Disadvantages:
+**Disadvantages:**
 
-- Cannot handle zero or negative y values limiting data applicability
-- Logarithmic transformation may amplify errors and unsuitable for non-exponential data
+- Cannot handle zero or negative y values
+- Logarithmic transformation may amplify errors
+- unsuitable for non-exponential data
 
 ## Transcendental Regression Code
 
@@ -2461,36 +2408,43 @@ Transcendental regression is used when the relationship between variables follow
 #include <bits/stdc++.h>
 using namespace std;
 
-int main(){
+int main() {
+    ifstream fin("input.txt");
+    ofstream fout("output.txt");
+
     int n;
-    cin>>n;
+    fin >> n;
 
-    vector<double>x(n),y(n);
+    vector<double> x(n), y(n);
 
-    for(int i=0;i<n;i++){
-        cin >> x[i] >> y[i];
-      }
-    double sumX=0,sumY=0,sumXY=0,sumX2=0;
-
-    for(int i=0;i<n;i++){
-        double X=x[i];        // X = x
-        double Y=log(y[i]);   // Y = ln(y)
-
-        sumX +=X;
-        sumY +=Y;
-        sumXY += X*Y;
-        sumX2 += X*X;
+    for (int i = 0; i < n; i++) {
+        fin >> x[i] >> y[i];
     }
 
-    double b =(n*sumXY - sumX*sumY) / (n*sumX2 - sumX*sumX);
-    double A =(sumY - b*sumX)/n;
+    double sumX = 0, sumY = 0, sumXY = 0, sumX2 = 0;
 
-    double a =exp(A);   // a = e^A
+    for (int i = 0; i < n; i++) {
+        double X = x[i];        // X = x
+        double Y = log(y[i]);   // Y = ln(y)
 
-    cout<<fixed<<setprecision(6);
-    cout<<"a= "<<a<<endl;
-    cout<<"b= "<<b<<endl;
-    cout<<"Model:y = "<<a<<"* e^("<<b<<"x)"<<endl;
+        sumX += X;
+        sumY += Y;
+        sumXY += X * Y;
+        sumX2 += X * X;
+    }
+
+    double b = (n * sumXY - sumX * sumY) / (n * sumX2 - sumX * sumX);
+    double A = (sumY - b * sumX) / n;
+
+    double a = exp(A);   // a = e^A
+
+    fout << fixed << setprecision(6);
+    fout << "a = " << a << endl;
+    fout << "b = " << b << endl;
+    fout << "Model: y = " << a << " * e^(" << b << "x)" << endl;
+
+    fin.close();
+    fout.close();
 
     return 0;
 }
@@ -2510,9 +2464,9 @@ int main(){
 ## Transcendental Regression Output
 
 ````
-a= 1.000008
-b= 0.999998
-Model:y = 1.000008* e^(0.999998x)
+a = 1.000008
+b = 0.999998
+Model: y = 1.000008 * e^(0.999998x)
 ```---
 
 # Numerical Integration
@@ -2529,38 +2483,32 @@ Simpson's 1/3 rule is a numerical integration method used to approximate definit
 - Approximates function using parabolas instead of straight lines
 - More accurate than trapezoidal rule
 - Based on fitting parabolas through three consecutive points
-- Uses weighted average with coefficients 1, 4, 2, 4, 2, ..., 4, 1
 
 **Formula:**
 
-````
-
 Integral = (h/3) * [f(x0) + 4*f(x1) + 2*f(x2) + 4*f(x3) + ... + 4\*f(xn-1) + f(xn)]
 
-````
-
-Where h = (b-a)/n and coefficients follow pattern: 1, 4, 2, 4, 2, ..., 4, 1
+Where h = (b-a)/n
 
 **Algorithm Steps:**
 
 1. Divide interval [a,b] into even number of sub-intervals (n)
-2. Calculate step size h = (b-a)/n
-3. Calculate function values at all points xi = a + i*h
-4. Apply Simpson's 1/3 formula:
-   - Add f(a) + f(b)
-   - Add 4 times sum of odd-indexed terms
-   - Add 2 times sum of even-indexed terms (except endpoints)
-   - Multiply total by h/3
+2. Calculate step size h=(b-a)/n
+3. Calculate function values at all points xi= a + i\*h
+4. Add f(a) + f(b)
+5. Add 4 times sum of odd-indexed terms
+6. Add 2 times sum of even-indexed terms
+7. Multiply total by h/3
 
 **Advantages:**
 
-- Higher accuracy than trapezoidal rule by capturing curvature better
-- Works well for smooth functions and widely used in engineering calculations
+- Higher accuracy than trapezoidal rule
+- Works well and widely used in calculation
 
 **Disadvantages:**
 
-- Requires even number of intervals and more complex than trapezoidal rule
-- May not work well for highly oscillating functions
+- Requires even number of intervals
+- Complex than trapezoidal rule
 
 ## Simpson's 1/3 Rule Code
 
@@ -2637,13 +2585,11 @@ Test Case 3: Value of integral = 0.463649
 
 ## Simpson's 3/8 Rule Theory
 
-Simpson's 3/8 rule is another numerical integration method used to approximate the area under a curve (definite integral). It is similar to Simpson's 1/3 rule but divides the interval into segments that are multiples of 3 and uses cubic polynomials for approximation.
-
-This method is more accurate than the trapezoidal rule and can be used when the number of intervals is a multiple of 3. It provides better accuracy for functions with more curvature.
+Simpson's 3/8 rule is another numerical integration method to approximate the area under a curve. It is similar to Simpson's 1/3 rule but divides the interval into segments that are multiples of 3 and uses cubic polynomials for approximation.
 
 **Key Concepts:**
 
-- Divides the interval into n segments where n must be a multiple of 3
+- Divides the interval into n segments (n must be a multiple of 3)
 - Approximates the curve using cubic polynomials
 - More accurate than trapezoidal rule
 - Requires equally spaced points
@@ -2652,17 +2598,28 @@ This method is more accurate than the trapezoidal rule and can be used when the 
 
 Integral = (3h/8) * [f(x0) + 3*f(x1) + 3*f(x2) + 2*f(x3) + 3\*f(x4) + ... + f(xn)]
 
-Where coefficients follow the pattern: 1, 3, 3, 2, 3, 3, 2, ..., 3, 3, 1
+h=(b-a)/n
+
+**Algorithm Steps:**
+
+1. Divide interval [a,b] into n sub-intervals, where n must be a multiple of 3
+2. Calculate step size h=(b-a)/n
+3. Calculate function values at all points xi= a + i\*h
+4. Add f(a) + f(b)
+5. Add 3 times the sum of function values where i is not a multiple of 3
+6. Add 2 times the sum of function values where i is a multiple of 3(not limiting values of i)
+7. Multiply total by 3h/8
 
 **Advantages:**
 
-- Good accuracy for smooth functions and can handle curves with higher variation
-- Useful alternative when number of intervals is multiple of 3
+- Good accuracy
+- Can handle curves with higher variation
+- Useful when number of intervals is multiple of 3
 
 **Disadvantages:**
 
-- Requires specific number of intervals (multiple of 3) limiting flexibility
-- More complex than trapezoidal rule with slightly higher computational cost
+- Requires specific number of intervals(multiple of 3)
+- Complex than trapezoidal rule
 
 ## Simpson's 3/8 Rule Code
 
@@ -2767,8 +2724,8 @@ Forward interpolation differentiation is a numerical method used to approximate 
 
 **Disadvantages:**
 
-- Limited to equally spaced data and accuracy decreases with higher order derivatives
-- Forward differences may accumulate errors and sensitive to data noise
+- Limited to equally spaced data
+- Accuracy decreases with higher order derivatives
 
 ## Differentiation Using Forward Interpolation Code
 
@@ -2889,7 +2846,6 @@ Backward interpolation differentiation is a numerical method used to approximate
 - Uses backward difference table to calculate derivatives
 - Suitable for points near the end of tabulated data
 - Requires equally spaced data points
-- Complementary method to forward interpolation differentiation
 - Based on finite difference approximation using backward differences
 
 **Algorithm Steps:**
@@ -2906,13 +2862,14 @@ Backward interpolation differentiation is a numerical method used to approximate
 
 **Advantages:**
 
-- Excellent for derivatives near end of data set without explicit function formula
-- Systematic approach using backward differences with good tabulated data analysis
+- Excellent for derivatives near end of data set
+- Systematic approach
 
 **Disadvantages:**
 
-- Limited to equally spaced data and accuracy decreases with higher order derivatives
-- Backward differences may amplify errors and sensitive to data noise
+- Limited to equally spaced data
+- Accuracy decreases with higher order derivatives
+- Backward differences may amplify errors
 
 ## Differentiation Using Backward Interpolation Code
 
@@ -3028,14 +2985,13 @@ Second derivative at x = 8.000000 : 2.000000
 
 ## Runge Kutta Theory
 
-The Runge-Kutta Method is one of the most powerful and widely-used numerical techniques for solving ordinary differential equations (ODEs). The 4th order Runge-Kutta method provides a good balance between accuracy and computational efficiency.
+The Runge-Kutta Method is one of the most powerful and widely-used numerical techniques for solving ordinary differential equations (ODEs). The 4th order Runge-Kutta method provides computational efficiency.
 
 **Key Concepts:**
 
 - Used to solve first-order differential equations of the form dy/dx = f(x, y)
 - Does not require calculation of higher-order derivatives
-- Fourth-order method means error is proportional to h^5
-- More accurate than Euler's method while still being relatively simple
+- More accurate than Euler's method
 
 **Formula:**
 
@@ -3062,8 +3018,8 @@ y(next) = y + (k1 + 2*k2 + 2*k3 + k4) / 6
 
 **Advantages:**
 
-- High accuracy with reasonable computational cost and no derivative calculations needed
-- Self-starting method requiring only initial condition with wide applicability
+- High accuracy with reasonable computational cost
+- No derivative calculations needed
 
 **Disadvantages:**
 
@@ -3074,7 +3030,6 @@ y(next) = y + (k1 + 2*k2 + 2*k3 + k4) / 6
 
 - When high accuracy is needed for ODEs
 - When function derivatives are difficult to compute
-- For initial value problems in engineering and physics
 
 ## Runge Kutta Code
 
@@ -3087,17 +3042,20 @@ double f(double x, double y) {
 }
 
 int main() {
+    ifstream fin("input.txt");
+    ofstream fout("output.txt");
+
     double x0, y0, x, h;
 
-    cin >> x0;
-    cin >> y0;
-    cin >> x;
-    cin >> h;
+    fin >> x0;
+    fin >> y0;
+    fin >> x;
+    fin >> h;
 
     int n = (int)((x - x0) / h);
     double y = y0;
 
-    cout << fixed << setprecision(6);
+    fout << fixed << setprecision(6);
 
     for (int i = 1; i <= n; i++) {
         double k1 = h * f(x0, y);
@@ -3105,13 +3063,16 @@ int main() {
         double k3 = h * f(x0 + h/2.0, y + k2/2.0);
         double k4 = h * f(x0 + h, y + k3);
 
-        cout << i << "\t" << x0 << "\t" << y << "\t" << k1 << "\t" << k2 << "\t" << k3 << "\t" << k4 << endl;
+        fout << i << "\t" << x0 << "\t" << y << "\t" << k1 << "\t" << k2 << "\t" << k3 << "\t" << k4 << endl;
 
         y = y + (k1 + 2*k2 + 2*k3 + k4) / 6.0;
         x0 = x0 + h;
     }
 
-    cout << "\nRoot: " << y << endl;
+    fout << "\nRoot: " << y << endl;
+
+    fin.close();
+    fout.close();
 
     return 0;
 }

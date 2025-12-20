@@ -10,7 +10,6 @@ LU Decomposition is a numerical method that breaks a square matrix into the prod
 - L is lower triangular (elements below diagonal)
 - U is upper triangular (elements on and above diagonal)
 - Solves system in two stages: Ly = b, then Ux = y
-- Particularly efficient for multiple systems with same coefficient matrix
 
 **Algorithm Steps:**
 
@@ -28,12 +27,12 @@ LU Decomposition is a numerical method that breaks a square matrix into the prod
 **Advantages:**
 
 - Very efficient when solving multiple systems with same coefficient matrix
-- Decomposition can be reused reducing computational complexity for repeated solutions
+- Decomposition can be reused for reducing computational complexity 
 
 **Disadvantages:**
 
 - Requires square non-singular matrix and may fail if pivot elements are zero
-- Not efficient for single system solution due to initial decomposition overhead
+- Not efficient for single system solution 
 
 ## LU Decomposition Code
 

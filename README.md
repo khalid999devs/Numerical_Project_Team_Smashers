@@ -148,7 +148,8 @@ This is a Numerical Methods Laboratory Project based on the Numerical Lab of the
 
 # Solution of Linear Equations
 
-# Gauss Elimination Method [⬆ Back to TOC](#table-of-contents)
+<a id="gauss-elimination-method"></a>
+# Gauss Elimination Method &nbsp;&nbsp;<sub>[⬆ Back to TOC](#table-of-contents)</sub>
 
 ## Gauss Elimination Theory
 
@@ -302,7 +303,8 @@ Value of x1 = 1
 Value of x2 = 1
 ```
 
-# Gauss Jordan Elimination Method [⬆ Back to TOC](#table-of-contents)
+<a id="gauss-jordan-elimination-method"></a>
+# Gauss Jordan Elimination Method &nbsp;&nbsp;<sub>[⬆ Back to TOC](#table-of-contents)</sub>
 
 ## Gauss Jordan Theory
 
@@ -448,7 +450,8 @@ Value of x2 = -1
 
 ```
 
-# LU Decomposition Method [⬆ Back to TOC](#table-of-contents)
+<a id="lu-decomposition-method"></a>
+# LU Decomposition Method &nbsp;&nbsp;<sub>[⬆ Back to TOC](#table-of-contents)</sub>
 
 ## LU Decomposition Theory
 
@@ -630,7 +633,8 @@ Value of x2 = 2
 
 ```
 
-# Matrix Inversion Method [⬆ Back to TOC](#table-of-contents)
+<a id="matrix-inversion-method"></a>
+# Matrix Inversion Method &nbsp;&nbsp;<sub>[⬆ Back to TOC](#table-of-contents)</sub>
 
 ## Matrix Inversion Theory
 
@@ -800,7 +804,8 @@ Matrix is singular and cannot be inverted.
 
 # Solution of Non-Linear Equations
 
-# Bi-section Method [⬆ Back to TOC](#table-of-contents)
+<a id="bi-section-method"></a>
+# Bi-section Method &nbsp;&nbsp;<sub>[⬆ Back to TOC](#table-of-contents)</sub>
 
 ## Bisection Theory
 
@@ -921,7 +926,8 @@ Root found at x = 1.645264
 Function value at root: f(1.645264) = -0.000746
 ```
 
-# False Position Method [⬆ Back to TOC](#table-of-contents)
+<a id="false-position-method"></a>
+# False Position Method &nbsp;&nbsp;<sub>[⬆ Back to TOC](#table-of-contents)</sub>
 
 ## False Position Theory
 
@@ -1052,7 +1058,8 @@ Root found at x = 1.646092
 Function value at root: f(1.646092) = -0.000155
 ```
 
-# Secant Method [⬆ Back to TOC](#table-of-contents)
+<a id="secant-method"></a>
+# Secant Method &nbsp;&nbsp;<sub>[⬆ Back to TOC](#table-of-contents)</sub>
 
 ## Secant Theory
 
@@ -1178,7 +1185,8 @@ Root found at x = 1.645837
 Function value at root: f(1.645837) = 0.000202
 ```
 
-# Newton-Raphson Method [⬆ Back to TOC](#table-of-contents)
+<a id="newton-raphson-method"></a>
+# Newton-Raphson Method &nbsp;&nbsp;<sub>[⬆ Back to TOC](#table-of-contents)</sub>
 
 ## Newton Raphson Theory
 
@@ -1317,7 +1325,8 @@ Function value at root: f(1.582884) = 0.000001
 
 # Interpolation & Approximation
 
-# Newton's Forward Interpolation [⬆ Back to TOC](#table-of-contents)
+<a id="newtons-forward-interpolation"></a>
+# Newton's Forward Interpolation &nbsp;&nbsp;<sub>[⬆ Back to TOC](#table-of-contents)</sub>
 
 ## Newton's Forward Interpolation Theory
 
@@ -1595,7 +1604,8 @@ Interpolated values:
   P(6) = 19.5
 ```
 
-# Newton's Backward Interpolation [⬆ Back to TOC](#table-of-contents)
+<a id="newtons-backward-interpolation"></a>
+# Newton's Backward Interpolation &nbsp;&nbsp;<sub>[⬆ Back to TOC](#table-of-contents)</sub>
 
 ## Newton's Backward Interpolation Theory
 
@@ -1863,7 +1873,8 @@ Interpolated values:
 
 ---
 
-# Newton's Divided Difference Method [⬆ Back to TOC](#table-of-contents)
+<a id="newtons-divided-difference-method"></a>
+# Newton's Divided Difference Method &nbsp;&nbsp;<sub>[⬆ Back to TOC](#table-of-contents)</sub>
 
 ## Divided Difference Theory
 
@@ -2120,7 +2131,8 @@ Interpolated values:
 
 # Curve Fitting/Regression
 
-# Linear Regression [⬆ Back to TOC](#table-of-contents)
+<a id="linear-regression"></a>
+# Linear Regression &nbsp;&nbsp;<sub>[⬆ Back to TOC](#table-of-contents)</sub>
 
 ## Linear Regression Theory
 
@@ -2222,7 +2234,8 @@ b = 0.900000
 Model: y = 1.300000 + 0.900000x
 ```
 
-# Polynomial Regression [⬆ Back to TOC](#table-of-contents)
+<a id="polynomial-regression"></a>
+# Polynomial Regression &nbsp;&nbsp;<sub>[⬆ Back to TOC](#table-of-contents)</sub>
 
 ## Polynomial Regression Theory
 
@@ -2352,7 +2365,8 @@ int main() {
 Fitted Polynomial:y = 0.000000 + 0.000000x^1 + 1.000000x^2
 ```
 
-# Transcendental Regression [⬆ Back to TOC](#table-of-contents)
+<a id="transcendental-regression"></a>
+# Transcendental Regression &nbsp;&nbsp;<sub>[⬆ Back to TOC](#table-of-contents)</sub>
 
 ## Transcendental Regression Theory
 
@@ -2453,7 +2467,8 @@ Model: y = 1.000008 * e^(0.999998x)
 
 # Numerical Integration
 
-# Simpson's 1/3 Rule [⬆ Back to TOC](#table-of-contents)
+<a id="simpsons-13-rule"></a>
+# Simpson's 1/3 Rule &nbsp;&nbsp;<sub>[⬆ Back to TOC](#table-of-contents)</sub>
 
 ## Simpson's 1/3 Rule Theory
 
@@ -2561,7 +2576,8 @@ Test Case 3: Value of integral = 0.463649
 
 ```
 
-# Simpson's 3/8 Rule [⬆ Back to TOC](#table-of-contents)
+<a id="simpsons-38-rule"></a>
+# Simpson's 3/8 Rule &nbsp;&nbsp;<sub>[⬆ Back to TOC](#table-of-contents)</sub>
 
 ## Simpson's 3/8 Rule Theory
 
@@ -2671,7 +2687,8 @@ Test Case 3: Value of integral = 0.0993483
 
 # Numerical Differentiation
 
-# Differentiation Using Forward Interpolation [⬆ Back to TOC](#table-of-contents)
+<a id="differentiation-using-forward-interpolation"></a>
+# Differentiation Using Forward Interpolation &nbsp;&nbsp;<sub>[⬆ Back to TOC](#table-of-contents)</sub>
 
 ## Differentiation Using Forward Interpolation Theory
 
@@ -2813,7 +2830,8 @@ Second derivative at x = 2.000000 : 2.000000
 
 ```
 
-# Differentiation Using Backward Interpolation [⬆ Back to TOC](#table-of-contents)
+<a id="differentiation-using-backward-interpolation"></a>
+# Differentiation Using Backward Interpolation &nbsp;&nbsp;<sub>[⬆ Back to TOC](#table-of-contents)</sub>
 
 ## Differentiation Using Backward Interpolation Theory
 
@@ -2959,7 +2977,8 @@ Second derivative at x = 8.000000 : 2.000000
 
 # Solution of Ordinary Differential Equations
 
-# Runge-Kutta Method [⬆ Back to TOC](#table-of-contents)
+<a id="runge-kutta-method"></a>
+# Runge-Kutta Method &nbsp;&nbsp;<sub>[⬆ Back to TOC](#table-of-contents)</sub>
 
 ## Runge Kutta Theory
 

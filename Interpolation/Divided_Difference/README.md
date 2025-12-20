@@ -8,8 +8,6 @@ Divided difference is a flexible interpolation method used to estimate function 
 
 - Works with unequally spaced data points
 - Uses divided difference table instead of regular difference table
-- Each column represents successive divided differences
-- Interpolation polynomial built using top row of table
 - More flexible than Newton's forward/backward methods
 
 **Algorithm Steps:**
@@ -32,8 +30,8 @@ Divided difference is a flexible interpolation method used to estimate function 
 
 **Disadvantages:**
 
-- More complex calculations than equal-spacing methods with potential numerical precision issues
-- Divided differences can become large for widely spaced points affecting stability
+- More complex calculations than equal-spacing methods
+- Divided differences can become large for widely spaced points 
 
 ## Divided Difference Code
 

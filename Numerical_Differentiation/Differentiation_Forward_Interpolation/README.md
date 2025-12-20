@@ -31,8 +31,8 @@ Forward interpolation differentiation is a numerical method used to approximate 
 
 **Disadvantages:**
 
-- Limited to equally spaced data and accuracy decreases with higher order derivatives
-- Forward differences may accumulate errors and sensitive to data noise
+- Limited to equally spaced data
+- Accuracy decreases with higher order derivatives
 
 ## Differentiation Using Forward Interpolation Code
 

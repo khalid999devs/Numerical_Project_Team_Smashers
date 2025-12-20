@@ -25,13 +25,14 @@ Backward interpolation differentiation is a numerical method used to approximate
 
 **Advantages:**
 
-- Excellent for derivatives near end of data set without explicit function formula
-- Systematic approach using backward differences 
+- Excellent for derivatives near end of data set 
+- Systematic approach  
 
 **Disadvantages:**
 
-- Limited to equally spaced data and accuracy decreases with higher order derivatives
-- Backward differences may amplify errors and sensitive to data noise
+- Limited to equally spaced data
+- Accuracy decreases with higher order derivatives
+- Backward differences may amplify errors 
 
 ## Differentiation Using Backward Interpolation Code
 
